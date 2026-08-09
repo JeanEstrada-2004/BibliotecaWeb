@@ -137,6 +137,22 @@
         "demo interactiva"
       ],
       "featured": true
+    },
+    {
+      "id": "ciclo-09-gestion-innovacion-encuesta-uso-inteligencia-artificial",
+      "title": "Percepción sobre el uso de la Inteligencia Artificial",
+      "slug": "encuesta-uso-inteligencia-artificial",
+      "areaId": "ciclo-09",
+      "collectionId": "gestion-innovacion",
+      "type": "presentation",
+      "summary": "Presentación interactiva que procesa localmente el Excel de la encuesta y convierte sus respuestas en hallazgos visuales.",
+      "status": "published",
+      "tags": [
+        "inteligencia artificial",
+        "encuesta",
+        "ética"
+      ],
+      "publishedAt": "2026-08-09"
     }
   ]
 }

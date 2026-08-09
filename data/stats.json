@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scope": "public-static-files",
-  "generatedAt": "2026-08-09T06:35:29Z",
-  "sourceFingerprint": "44ddb8cc6fa890baaf5ddc07fd38f3c10e9698e08bdd641625d961bd8db1d220",
+  "generatedAt": "2026-08-09T07:15:23Z",
+  "sourceFingerprint": "7fcef5e95d6f5326aef15ed39c227c388954e95a4121ea687c1e047125037570",
   "policy": {
     "kind": "internal-maintenance",
     "label": "Política interna de BibliotecaWeb",
     "budgetBytes": 209715200,
-    "budgetPercentage": 0.23,
+    "budgetPercentage": 0.34,
     "status": {
       "id": "excellent",
       "label": "Excelente",
@@ -16,12 +16,12 @@
     }
   },
   "summary": {
-    "totalBytes": 479556,
-    "artifactBytes": 43082,
-    "sharedBytes": 436474,
-    "artifactCount": 2,
-    "publishedArtifactCount": 2,
-    "fileCount": 32,
+    "totalBytes": 721927,
+    "artifactBytes": 284672,
+    "sharedBytes": 437255,
+    "artifactCount": 3,
+    "publishedArtifactCount": 3,
+    "fileCount": 38,
     "warningCount": 0
   },
   "breakdown": {
@@ -29,14 +29,14 @@
       {
         "id": "ciclo-09",
         "label": "9.º ciclo",
-        "bytes": 22550,
-        "percentage": 52.34
+        "bytes": 264140,
+        "percentage": 92.79
       },
       {
         "id": "personal",
         "label": "Personal / Extras",
         "bytes": 20532,
-        "percentage": 47.66
+        "percentage": 7.21
       },
       {
         "id": "ciclo-10",
@@ -55,14 +55,14 @@
       {
         "id": "presentation",
         "label": "Presentación",
-        "bytes": 22550,
-        "percentage": 52.34
+        "bytes": 264140,
+        "percentage": 92.79
       },
       {
         "id": "page",
         "label": "Página",
         "bytes": 20532,
-        "percentage": 47.66
+        "percentage": 7.21
       },
       {
         "id": "mockup",
@@ -76,47 +76,60 @@
         "id": "vendor",
         "label": "Dependencias versionadas",
         "bytes": 311890,
-        "percentage": 65.04
+        "percentage": 43.2
+      },
+      {
+        "id": "artifacts",
+        "label": "Artefactos",
+        "bytes": 284672,
+        "percentage": 39.43
       },
       {
         "id": "portal",
         "label": "Portal",
         "bytes": 60049,
-        "percentage": 12.52
-      },
-      {
-        "id": "artifacts",
-        "label": "Artefactos",
-        "bytes": 43082,
-        "percentage": 8.98
+        "percentage": 8.32
       },
       {
         "id": "status-page",
         "label": "Página de estado",
         "bytes": 27604,
-        "percentage": 5.76
+        "percentage": 3.82
       },
       {
         "id": "runtime",
         "label": "Presentation Runtime",
         "bytes": 26696,
-        "percentage": 5.57
+        "percentage": 3.7
+      },
+      {
+        "id": "data",
+        "label": "Datos",
+        "bytes": 5728,
+        "percentage": 0.79
       },
       {
         "id": "brands",
         "label": "Brands",
         "bytes": 5288,
-        "percentage": 1.1
-      },
-      {
-        "id": "data",
-        "label": "Datos",
-        "bytes": 4947,
-        "percentage": 1.03
+        "percentage": 0.73
       }
     ]
   },
   "artifacts": [
+    {
+      "id": "ciclo-09-gestion-innovacion-encuesta-uso-inteligencia-artificial",
+      "title": "Percepción sobre el uso de la Inteligencia Artificial",
+      "areaId": "ciclo-09",
+      "areaLabel": "9.º ciclo",
+      "type": "presentation",
+      "typeLabel": "Presentación",
+      "status": "published",
+      "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial",
+      "bytes": 241590,
+      "fileCount": 6,
+      "percentageOfArtifacts": 84.87
+    },
     {
       "id": "ciclo-09-introduccion-auditoria-sistemas",
       "title": "Introducción a la Auditoría de Sistemas",
@@ -128,7 +141,7 @@
       "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas",
       "bytes": 22550,
       "fileCount": 4,
-      "percentageOfArtifacts": 52.34
+      "percentageOfArtifacts": 7.92
     },
     {
       "id": "personal-anatomia-biblioteca-web",
@@ -141,10 +154,15 @@
       "path": "artefactos/personal/general/anatomia-biblioteca-web",
       "bytes": 20532,
       "fileCount": 3,
-      "percentageOfArtifacts": 47.66
+      "percentageOfArtifacts": 7.21
     }
   ],
   "largestFiles": [
+    {
+      "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial/assets/chart.umd.min.js",
+      "bytes": 200807,
+      "sha256": "81ffafe13c37e1b25793b020d446f4d9739b949dadb7f9f79d709a0cad781c2f"
+    },
     {
       "path": "vendor/reveal/6.0.1/dist/reveal.mjs",
       "bytes": 139091,
@@ -171,19 +189,14 @@
       "sha256": "81a2b0d779b19115c957cc9ef92fcd88aa105ee6628d07f1e3ffea27d887854a"
     },
     {
+      "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial/presentation.js",
+      "bytes": 21772,
+      "sha256": "04ebcc2d5a63f3b82b7e9c7a8d05240f48dbe07f7fbeaac253ac2b6d030516b9"
+    },
+    {
       "path": "runtime/presentation/v1/runtime.js",
       "bytes": 21222,
       "sha256": "a12b83bee30ed7ddd25dc71f0d135be9c4c38f39bb452fa4dba3d4f1d0aa4461"
-    },
-    {
-      "path": "estado/estado.css",
-      "bytes": 13099,
-      "sha256": "c8d7e44584e02f8fcaef2a7a2c9c2c36a09029e71ed096ad5f2c54e3e18f830b"
-    },
-    {
-      "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas/index.html",
-      "bytes": 11496,
-      "sha256": "4753b317c0d0a232b109e2aac859e1ace60bb4663edf81e1d64e9d64a814dc31"
     }
   ],
   "duplicates": [],

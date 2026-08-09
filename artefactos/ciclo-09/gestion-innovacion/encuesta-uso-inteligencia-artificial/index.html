@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Presentación interactiva de la encuesta USMP sobre el uso de la inteligencia artificial."
+    >
+    <title>Percepción sobre el uso de la Inteligencia Artificial</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+    <script defer src="assets/chart.umd.min.js"></script>
+    <script defer src="presentation.js"></script>
+  </head>
+  <body>
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Percepción sobre el uso de la Inteligencia Artificial"
+    >
+      <div class="slides">
+        <section
+          data-slide
+          data-slide-id="cargar-datos"
+          data-brand-chrome="full"
+          aria-labelledby="titulo-cargar-datos"
+        >
+          <div class="cover-layout">
+            <header class="cover-copy">
+              <p class="overline">Encuesta universitaria · USMP</p>
+              <h1 id="titulo-cargar-datos">Percepción sobre el uso de la Inteligencia Artificial</h1>
+              <p class="lead">Carga el Excel de Google Forms para convertir sus respuestas en una presentación lista para exponer.</p>
+              <p class="privacy-note"><strong>Privacidad:</strong> el archivo se procesa solo en este navegador.</p>
+            </header>
+
+            <div class="upload-panel">
+              <div
+                class="drop-zone"
+                id="dropZone"
+                role="button"
+                tabindex="0"
+                aria-controls="fileInput"
+                aria-describedby="fileHelp fileStatus"
+              >
+                <span class="upload-mark" aria-hidden="true">.XLSX</span>
+                <h2>Selecciona el Excel</h2>
+                <p id="fileHelp">Usa el archivo exportado directamente desde el formulario.</p>
+                <label class="upload-button" for="fileInput">Elegir archivo</label>
+                <input id="fileInput" type="file" accept=".xlsx">
+                <p class="file-status" id="fileStatus" aria-live="polite">Esperando un archivo…</p>
+                <p class="file-error" id="fileError" role="alert"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="panorama"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-panorama"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading">
+              <p class="overline">01 / Panorama</p>
+              <h2 id="titulo-panorama">Cuatro cifras sitúan la conversación.</h2>
+            </header>
+            <div class="kpi-grid">
+              <article class="kpi">
+                <strong id="kpiTotal">—</strong>
+                <span>Respuestas</span>
+              </article>
+              <article class="kpi">
+                <strong id="kpiEscuelas">—</strong>
+                <span>Escuelas representadas</span>
+              </article>
+              <article class="kpi">
+                <strong id="kpiAprendizaje">—</strong>
+                <span>IA facilita el aprendizaje</span>
+              </article>
+              <article class="kpi">
+                <strong id="kpiConfiabilidad">—</strong>
+                <span>Confiabilidad percibida</span>
+              </article>
+            </div>
+            <div class="insight-strip">
+              <span class="insight-index">Lectura inicial</span>
+              <p id="panoramaInsight">Los datos mostrarán el alcance de la muestra y cómo se valora la IA.</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="perfil"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-perfil"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading compact-heading">
+              <p class="overline">02 / Perfil</p>
+              <h2 id="titulo-perfil">La composición de la muestra da contexto a cada resultado.</h2>
+            </header>
+            <div class="chart-grid chart-grid-three">
+              <figure class="chart-card">
+                <figcaption>Rango de edad</figcaption>
+                <div class="chart-frame"><canvas id="chartEdad"></canvas></div>
+              </figure>
+              <figure class="chart-card">
+                <figcaption>Ciclo académico</figcaption>
+                <div class="chart-frame"><canvas id="chartCiclo"></canvas></div>
+              </figure>
+              <figure class="chart-card chart-card-wide-labels">
+                <figcaption>Escuela académica</figcaption>
+                <div class="chart-frame"><canvas id="chartEscuela"></canvas></div>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="habitos"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-habitos"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading compact-heading">
+              <p class="overline">03 / Hábitos de uso</p>
+              <h2 id="titulo-habitos">Las herramientas importan menos que la forma de incorporarlas.</h2>
+            </header>
+            <div class="habits-layout">
+              <figure class="chart-card tools-card">
+                <figcaption>Herramientas más utilizadas</figcaption>
+                <div class="chart-frame"><canvas id="chartHerramientas"></canvas></div>
+              </figure>
+              <figure class="chart-card frequency-card">
+                <figcaption>Frecuencia de uso</figcaption>
+                <div class="chart-frame"><canvas id="chartFrecuencia"></canvas></div>
+              </figure>
+              <figure class="chart-card purpose-card">
+                <figcaption>Actividades apoyadas con IA</figcaption>
+                <div class="chart-frame"><canvas id="chartParaQue"></canvas></div>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="valor-riesgo"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-valor-riesgo"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading compact-heading">
+              <p class="overline">04 / Valor y riesgo</p>
+              <h2 id="titulo-valor-riesgo">El beneficio percibido convive con límites que exigen criterio.</h2>
+            </header>
+            <div class="balance-layout">
+              <figure class="chart-card">
+                <figcaption>Beneficio principal</figcaption>
+                <div class="chart-frame"><canvas id="chartBeneficio"></canvas></div>
+              </figure>
+              <figure class="chart-card">
+                <figcaption>Riesgo principal</figcaption>
+                <div class="chart-frame"><canvas id="chartRiesgo"></canvas></div>
+              </figure>
+              <div class="metric-stack">
+                <article class="metric-block">
+                  <span>Aprendizaje</span>
+                  <strong id="metricAprendizaje">—</strong>
+                  <p>La IA facilita mi aprendizaje académico.</p>
+                </article>
+                <article class="metric-block">
+                  <span>Confiabilidad</span>
+                  <strong id="metricConfiabilidad">—</strong>
+                  <p>Confianza en la información generada por IA.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="criterio-etico"
+          data-brand-chrome="full"
+          aria-labelledby="titulo-criterio-etico"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading compact-heading">
+              <p class="overline">05 / Criterio ético</p>
+              <h2 id="titulo-criterio-etico">Adoptar IA también implica decidir qué uso es responsable.</h2>
+            </header>
+            <div class="ethics-layout">
+              <figure class="chart-card ethics-card">
+                <figcaption>¿Es ético presentar como propio un trabajo hecho con IA?</figcaption>
+                <div class="chart-frame"><canvas id="chartEtico"></canvas></div>
+              </figure>
+              <figure class="chart-card human-card">
+                <figcaption>Lo que la IA aún no puede reemplazar</figcaption>
+                <div class="chart-frame"><canvas id="chartNoReemplaza"></canvas></div>
+              </figure>
+              <aside class="voices-panel">
+                <span class="voices-label">Voces de la encuesta</span>
+                <ul id="quoteList">
+                  <li>Las respuestas abiertas aparecerán aquí.</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+  </body>
+</html>

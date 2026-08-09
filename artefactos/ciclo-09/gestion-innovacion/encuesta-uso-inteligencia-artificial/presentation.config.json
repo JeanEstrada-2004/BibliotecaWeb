@@ -1,0 +1,25 @@
+{
+  "contractVersion": 1,
+  "presentationId": "ciclo-09-gestion-innovacion-encuesta-uso-inteligencia-artificial",
+  "brand": "usmp",
+  "brandData": {
+    "faculty": "Facultad de Ingeniería y Arquitectura",
+    "school": "Escuela Profesional de Ingeniería de Computación y Sistemas",
+    "course": "Gestión de la Innovación"
+  },
+  "homeHref": "../../../../",
+  "aspectRatio": "16:9",
+  "chromeDefault": "minimal",
+  "transition": {
+    "default": "fade",
+    "durationMs": 450
+  },
+  "features": {
+    "controls": true,
+    "progress": true,
+    "slideNumber": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true
+  }
+}

@@ -1,0 +1,8 @@
+Dependencia incluida localmente
+
+Chart.js 4.4.1
+Origen: https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js
+Proyecto y licencia MIT: https://github.com/chartjs/Chart.js
+
+El archivo se sirve desde la carpeta del artefacto. El Excel seleccionado se
+procesa localmente en el navegador y no se envía a este proyecto ni a un servidor.
