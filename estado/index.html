@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Estado, crecimiento y distribución de la huella web de BibliotecaWeb.">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#173f35">
+    <title>Estado de la biblioteca · Biblioteca Web</title>
+    <link rel="stylesheet" href="estado.css">
+    <script type="module" src="estado.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="Volver a Biblioteca Web">
+        <span class="brand__mark" aria-hidden="true">BW</span>
+        <span>
+          <strong>Biblioteca Web</strong>
+          <small>Estado de la biblioteca</small>
+        </span>
+      </a>
+      <a class="back-link" href="../">← Volver a la biblioteca</a>
+    </header>
+
+    <main id="contenido">
+      <section class="status-hero" aria-labelledby="page-title" data-status-hero>
+        <div class="status-hero__copy">
+          <p class="eyebrow">Huella web publicable</p>
+          <h1 id="page-title">Estado de la biblioteca</h1>
+          <p class="status-hero__summary" data-status-message>
+            Calculando el crecimiento y la distribución actual…
+          </p>
+        </div>
+
+        <div class="storage-reading" aria-label="Resumen de almacenamiento">
+          <span class="status-chip" data-status-chip>Cargando</span>
+          <strong data-total-size>—</strong>
+          <span data-budget-label>de la política interna</span>
+          <progress data-budget-progress max="100" value="0">0%</progress>
+          <p><span data-budget-percentage>—</span> del presupuesto interno utilizado</p>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Indicadores principales">
+        <article>
+          <span>Artefactos</span>
+          <strong data-artifact-count>—</strong>
+          <small data-published-count>— publicados</small>
+        </article>
+        <article>
+          <span>Peso de artefactos</span>
+          <strong data-artifact-size>—</strong>
+          <small>Contenido independiente</small>
+        </article>
+        <article>
+          <span>Infraestructura</span>
+          <strong data-shared-size>—</strong>
+          <small>Portal, runtime y recursos</small>
+        </article>
+        <article>
+          <span>Último cálculo</span>
+          <strong class="metric-date" data-generated-at>—</strong>
+          <small data-file-count>— archivos medidos</small>
+        </article>
+      </section>
+
+      <section class="dashboard-section" aria-labelledby="distribution-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">01</p>
+            <h2 id="distribution-title">Dónde está el peso</h2>
+          </div>
+          <p>Las áreas y tipos miden solamente sus artefactos; los componentes muestran toda la huella publicable.</p>
+        </div>
+
+        <div class="distribution-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Por área</h3>
+              <span>Artefactos</span>
+            </div>
+            <div class="bar-list" data-area-breakdown></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <h3>Por tipo</h3>
+              <span>Artefactos</span>
+            </div>
+            <div class="bar-list" data-type-breakdown></div>
+          </article>
+          <article class="panel panel--wide">
+            <div class="panel-heading">
+              <h3>Por componente</h3>
+              <span>Sitio completo</span>
+            </div>
+            <div class="bar-list bar-list--columns" data-component-breakdown></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-section" aria-labelledby="artifacts-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">02</p>
+            <h2 id="artifacts-title">Artefactos más pesados</h2>
+          </div>
+          <p>Esta lista ayuda a detectar qué contenido convendría optimizar o separar primero.</p>
+        </div>
+
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Artefacto</th>
+                <th scope="col">Área</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Archivos</th>
+                <th scope="col">Tamaño</th>
+              </tr>
+            </thead>
+            <tbody data-artifact-table></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="dashboard-section detail-grid" aria-label="Detalles técnicos">
+        <article class="panel" aria-labelledby="files-title">
+          <div class="panel-heading">
+            <h2 id="files-title">Archivos más pesados</h2>
+            <span>Top local</span>
+          </div>
+          <ol class="file-list" data-largest-files></ol>
+        </article>
+
+        <article class="panel" aria-labelledby="alerts-title">
+          <div class="panel-heading">
+            <h2 id="alerts-title">Alertas de mantenimiento</h2>
+            <span data-warning-count>—</span>
+          </div>
+          <div class="alert-list" data-warning-list></div>
+        </article>
+      </section>
+
+      <aside class="policy-note" aria-labelledby="policy-title">
+        <div>
+          <p class="eyebrow">Criterio de lectura</p>
+          <h2 id="policy-title">Una guía interna, no un límite oficial</h2>
+        </div>
+        <p>
+          Los niveles de esta página pertenecen únicamente a la política configurable de BibliotecaWeb.
+          Sirven para anticipar mantenimiento, optimización o separación del contenido.
+        </p>
+      </aside>
+
+      <section class="load-error" data-load-error role="alert" hidden>
+        <p class="eyebrow">Datos no disponibles</p>
+        <h2>No pudimos leer las estadísticas.</h2>
+        <p data-load-error-message>Vuelve a generar el resumen local e inténtalo nuevamente.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Biblioteca Web <span aria-hidden="true">·</span> Medición local y transparente.</p>
+      <a href="../">Explorar artefactos</a>
+    </footer>
+
+    <noscript>
+      <p class="noscript-message">Esta página necesita JavaScript para presentar las estadísticas calculadas.</p>
+    </noscript>
+  </body>
+</html>

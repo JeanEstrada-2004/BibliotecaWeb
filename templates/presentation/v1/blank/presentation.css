@@ -1,0 +1,81 @@
+:root {
+  --paper: #f5f3ee;
+  --ink: #171917;
+  --muted: #61665f;
+  --accent: #245c47;
+  --pc-viewport-background: var(--paper);
+  --pc-slide-background: var(--paper);
+  --pc-runtime-accent: var(--accent);
+  --pc-runtime-ink: var(--ink);
+  --pc-runtime-control: rgb(245 243 238 / 88%);
+  color-scheme: light;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.reveal {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: inherit;
+}
+
+.reveal .slides > .pc-slide {
+  display: grid;
+  align-content: center;
+  gap: 28px;
+  border-left: 12px solid var(--accent);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal p,
+.reveal ul {
+  margin: 0;
+}
+
+.reveal h1,
+.reveal h2 {
+  max-width: 1120px;
+  color: var(--ink);
+  font-family: inherit;
+  font-weight: 760;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 92px;
+}
+
+.reveal h2 {
+  font-size: 64px;
+}
+
+.reveal p,
+.reveal li {
+  color: var(--muted);
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.kicker {
+  color: var(--accent) !important;
+  font-size: 16px !important;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 850px;
+  font-size: 30px !important;
+}
+
+.points {
+  display: grid;
+  max-width: 980px;
+  gap: 18px;
+  padding-left: 32px;
+}

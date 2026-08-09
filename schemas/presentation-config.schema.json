@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bibliotecaweb.local/schemas/presentation-config.schema.json",
+  "title": "Configuración de una presentación de BibliotecaWeb",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "presentationId",
+    "aspectRatio",
+    "chromeDefault",
+    "transition",
+    "features"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": 1
+    },
+    "presentationId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "brand": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "brandData": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][a-zA-Z0-9]*$"
+      },
+      "additionalProperties": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 160
+      }
+    },
+    "homeHref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^(?![a-zA-Z][a-zA-Z0-9+.-]*:)(?![/\\\\])[^?#]+$"
+    },
+    "aspectRatio": {
+      "const": "16:9"
+    },
+    "chromeDefault": {
+      "enum": [
+        "full",
+        "minimal",
+        "none"
+      ]
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default",
+        "durationMs"
+      ],
+      "properties": {
+        "default": {
+          "enum": [
+            "none",
+            "fade",
+            "slide",
+            "zoom"
+          ]
+        },
+        "durationMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3000
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "controls",
+        "progress",
+        "slideNumber",
+        "keyboard",
+        "touch",
+        "fullscreen"
+      ],
+      "properties": {
+        "controls": {
+          "type": "boolean"
+        },
+        "progress": {
+          "type": "boolean"
+        },
+        "slideNumber": {
+          "type": "boolean"
+        },
+        "keyboard": {
+          "type": "boolean"
+        },
+        "touch": {
+          "type": "boolean"
+        },
+        "fullscreen": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Recorrido interactivo por la arquitectura ligera y separable de BibliotecaWeb."
+    >
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0c0e13">
+    <title>Anatomía de BibliotecaWeb</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="topbar">
+      <a class="back-link" href="../../../../">
+        <span aria-hidden="true">←</span>
+        Biblioteca Web
+      </a>
+      <p>Artefacto 001 <span aria-hidden="true">/</span> Personal</p>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__copy">
+          <p class="eyebrow">Página interactiva · Sin backend</p>
+          <h1 id="page-title">Anatomía de una biblioteca sin estantes físicos.</h1>
+          <p class="hero__lead">
+            Cuatro áreas, un catálogo y artefactos que conservan su propia identidad. Este es el primer caso real que demuestra cómo encajan las piezas.
+          </p>
+          <a class="hero__action" href="#mapa">Recorrer la arquitectura</a>
+        </div>
+
+        <div class="path-poster" aria-label="Ruta canónica de este artefacto">
+          <p>Ruta canónica</p>
+          <ol>
+            <li><span>01</span> artefactos</li>
+            <li><span>02</span> personal</li>
+            <li><span>03</span> general</li>
+            <li><span>04</span> anatomia-biblioteca-web</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="architecture" id="mapa" aria-labelledby="architecture-title">
+        <div class="section-intro">
+          <p class="section-number">01 / Arquitectura</p>
+          <h2 id="architecture-title">Tres piezas, responsabilidades claras.</h2>
+          <p>Selecciona una capa para ver qué conoce y, sobre todo, qué debe ignorar.</p>
+        </div>
+
+        <div class="layer-explorer">
+          <div class="layer-tabs" role="tablist" aria-label="Capas de BibliotecaWeb">
+            <button
+              id="tab-portal"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="layer-detail"
+              data-layer="portal"
+            >
+              <span>01</span>
+              Portal
+            </button>
+            <button
+              id="tab-catalogo"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="layer-detail"
+              data-layer="catalogo"
+              tabindex="-1"
+            >
+              <span>02</span>
+              Catálogo
+            </button>
+            <button
+              id="tab-artefacto"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="layer-detail"
+              data-layer="artefacto"
+              tabindex="-1"
+            >
+              <span>03</span>
+              Artefacto
+            </button>
+          </div>
+
+          <article
+            class="layer-detail"
+            id="layer-detail"
+            role="tabpanel"
+            aria-labelledby="tab-portal"
+            tabindex="0"
+          >
+            <p class="layer-detail__label" id="layer-label">Capa de descubrimiento</p>
+            <h3 id="layer-title">Portal</h3>
+            <p id="layer-description">
+              Organiza áreas, colecciones y resultados para ayudar a encontrar cada pieza.
+            </p>
+            <dl>
+              <div>
+                <dt>Conoce</dt>
+                <dd id="layer-knows">El catálogo público</dd>
+              </div>
+              <div>
+                <dt>Ignora</dt>
+                <dd id="layer-ignores">La implementación interna de cada artefacto</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="types" aria-labelledby="types-title">
+        <div class="section-intro">
+          <p class="section-number">02 / Tipos</p>
+          <h2 id="types-title">Un contenedor común, tres libertades distintas.</h2>
+        </div>
+
+        <div class="type-grid">
+          <article class="type-card type-card--presentation">
+            <p>01</p>
+            <h3>Presentación</h3>
+            <p>Comparte navegación, steps y transiciones mediante un runtime versionado.</p>
+            <span>Capacidades comunes</span>
+          </article>
+
+          <article class="type-card type-card--mockup">
+            <p>02</p>
+            <h3>Mockup</h3>
+            <p>Simula pantallas y flujos funcionales sin convertirse en una aplicación productiva.</p>
+            <span>Interfaz autónoma</span>
+          </article>
+
+          <article class="type-card type-card--page">
+            <p>03</p>
+            <h3>Página</h3>
+            <p>Explora una idea con HTML, CSS y JavaScript completamente propios, como esta página.</p>
+            <span>Libertad total</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="independence" aria-labelledby="independence-title">
+        <div>
+          <p class="section-number">03 / Separabilidad</p>
+          <h2 id="independence-title">Si puede salir sin romper nada, está bien construido.</h2>
+        </div>
+
+        <ul class="checklist">
+          <li>
+            <span aria-hidden="true">✓</span>
+            Assets y estilos dentro de su propia carpeta.
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span>
+            Ningún import desde otro artefacto.
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span>
+            Ruta derivada desde área, colección y slug.
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span>
+            Funciona sin portal, runtime ni conexión externa.
+          </li>
+        </ul>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <p class="eyebrow">Primer artefacto validado</p>
+        <h2 id="closing-title">La biblioteca ya tiene algo que guardar.</h2>
+        <a href="../../../../#/personal/general">Verlo dentro del catálogo</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Anatomía de BibliotecaWeb</p>
+      <p>HTML · CSS · JavaScript</p>
+    </footer>
+  </body>
+</html>

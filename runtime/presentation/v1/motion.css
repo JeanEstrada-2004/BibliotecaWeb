@@ -1,0 +1,18 @@
+@layer pc-motion {
+  @media (prefers-reduced-motion: reduce) {
+    .pc-presentation *,
+    .pc-presentation *::before,
+    .pc-presentation *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-delay: 0ms !important;
+      transition-duration: 1ms !important;
+    }
+
+    .pc-presentation .pc-step {
+      filter: none !important;
+      transform: none !important;
+    }
+  }
+}

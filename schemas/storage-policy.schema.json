@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./storage-policy.schema.json",
+  "title": "Política interna de almacenamiento de BibliotecaWeb",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "label",
+    "budgetBytes",
+    "fileWarningBytes",
+    "artifactWarningBytes",
+    "duplicateMinimumBytes",
+    "concentrationPercentage",
+    "minimumArtifactsForConcentration",
+    "topItemsLimit",
+    "levels"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "internal-maintenance" },
+    "label": { "type": "string", "minLength": 1 },
+    "budgetBytes": { "type": "integer", "minimum": 1 },
+    "fileWarningBytes": { "type": "integer", "minimum": 0 },
+    "artifactWarningBytes": { "type": "integer", "minimum": 0 },
+    "duplicateMinimumBytes": { "type": "integer", "minimum": 0 },
+    "concentrationPercentage": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "minimumArtifactsForConcentration": { "type": "integer", "minimum": 0 },
+    "topItemsLimit": { "type": "integer", "minimum": 1 },
+    "levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "tone", "minPercentage", "message"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "label": { "type": "string", "minLength": 1 },
+          "tone": { "enum": ["positive", "neutral", "attention", "warning", "critical"] },
+          "minPercentage": { "type": "integer", "minimum": 0 },
+          "message": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

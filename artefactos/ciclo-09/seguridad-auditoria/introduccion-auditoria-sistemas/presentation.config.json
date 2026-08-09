@@ -1,0 +1,25 @@
+{
+  "contractVersion": 1,
+  "presentationId": "ciclo-09-introduccion-auditoria-sistemas",
+  "brand": "usmp",
+  "brandData": {
+    "faculty": "Facultad de Ingeniería y Arquitectura",
+    "school": "Escuela Profesional de Ingeniería de Computación y Sistemas",
+    "course": "Seguridad y Auditoría de Sistemas de Información"
+  },
+  "homeHref": "../../../../",
+  "aspectRatio": "16:9",
+  "chromeDefault": "none",
+  "transition": {
+    "default": "slide",
+    "durationMs": 600
+  },
+  "features": {
+    "controls": true,
+    "progress": true,
+    "slideNumber": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true
+  }
+}

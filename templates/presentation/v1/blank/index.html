@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Template neutral para una presentación de BibliotecaWeb.">
+    <title>Título de la presentación</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Título de la presentación"
+    >
+      <div class="slides">
+        <section data-slide data-slide-id="portada" data-brand-chrome="none" aria-labelledby="titulo-portada">
+          <p class="kicker">Área o curso</p>
+          <h1 id="titulo-portada">Título de la presentación</h1>
+          <p class="lead">Una frase breve que explique la idea central.</p>
+        </section>
+
+        <section data-slide data-slide-id="idea-principal" data-brand-chrome="none" aria-labelledby="titulo-idea">
+          <p class="kicker">01 / Sección</p>
+          <h2 id="titulo-idea">Una idea clara por diapositiva.</h2>
+          <ul class="points">
+            <li data-step data-step-id="punto-uno" data-step-effect="fade-up">Primer argumento o evidencia.</li>
+            <li data-step data-step-id="punto-dos" data-step-effect="fade-up">Segundo argumento o evidencia.</li>
+            <li data-step data-step-id="punto-tres" data-step-effect="fade-up">Conclusión parcial.</li>
+          </ul>
+        </section>
+
+        <section data-slide data-slide-id="cierre" data-brand-chrome="none" aria-labelledby="titulo-cierre">
+          <p class="kicker">Cierre</p>
+          <h2 id="titulo-cierre">La idea que debe permanecer.</h2>
+          <p class="lead">Reemplaza esta frase con una conclusión concreta.</p>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+  </body>
+</html>

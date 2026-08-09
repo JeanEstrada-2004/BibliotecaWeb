@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bibliotecaweb.local/schemas/catalog.schema.json",
+  "title": "Catálogo de BibliotecaWeb",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "areas",
+    "collections",
+    "types",
+    "artifacts"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "areas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/area"
+      }
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/collection"
+      }
+    },
+    "types": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifactType"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "positiveOrder": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "area": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "order"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "order": {
+          "$ref": "#/$defs/positiveOrder"
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "areaId",
+        "label",
+        "order"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "areaId": {
+          "$ref": "#/$defs/slug"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "order": {
+          "$ref": "#/$defs/positiveOrder"
+        }
+      }
+    },
+    "artifactType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "order"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "order": {
+          "$ref": "#/$defs/positiveOrder"
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "areaId",
+        "collectionId",
+        "type",
+        "summary",
+        "status",
+        "tags"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slug": {
+          "$ref": "#/$defs/slug"
+        },
+        "areaId": {
+          "$ref": "#/$defs/slug"
+        },
+        "collectionId": {
+          "$ref": "#/$defs/slug"
+        },
+        "type": {
+          "$ref": "#/$defs/slug"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 320
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "published",
+            "archived"
+          ]
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "cover": {
+          "type": "string",
+          "pattern": "^assets/[a-zA-Z0-9][a-zA-Z0-9._/-]*$",
+          "not": {
+            "pattern": "(^|/)\\.\\.(?:/|$)"
+          }
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "details": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "additionalProperties": {
+            "type": "object"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "publishedAt"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

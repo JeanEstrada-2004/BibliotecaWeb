@@ -1,0 +1,130 @@
+:root {
+  --cream: #f3eee6;
+  --paper: #fffaf3;
+  --ink: #23191b;
+  --muted: #73666a;
+  --wine: #8f2131;
+  --gold: #bd8b3d;
+  --pc-viewport-background: var(--cream);
+  --pc-slide-background: var(--paper);
+  --pc-runtime-accent: var(--wine);
+  --pc-runtime-ink: var(--ink);
+  --pc-runtime-control: rgb(255 250 243 / 90%);
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.reveal {
+  color: var(--ink);
+  background: var(--cream);
+  font-family: inherit;
+}
+
+.reveal .slides > .pc-slide {
+  display: grid;
+  align-content: center;
+  gap: 34px;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgb(143 33 49 / 5%) 1px, transparent 1px),
+    linear-gradient(rgb(143 33 49 / 4%) 1px, transparent 1px),
+    var(--paper);
+  background-size: 56px 56px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal p,
+.reveal ol {
+  margin: 0;
+}
+
+.reveal h1,
+.reveal h2 {
+  max-width: 1120px;
+  color: var(--ink);
+  font-family: inherit;
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 90px;
+}
+
+.reveal h2 {
+  font-size: 60px;
+}
+
+.reveal p,
+.reveal li {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.academic-cover,
+.section-heading {
+  display: grid;
+  gap: 26px;
+}
+
+.overline {
+  color: var(--wine) !important;
+  font: 800 15px/1 ui-sans-serif, system-ui, sans-serif !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  max-width: 880px;
+  font-size: 28px !important;
+}
+
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.academic-grid article {
+  min-height: 230px;
+  padding: 30px;
+  border-top: 5px solid var(--wine);
+  background: rgb(255 250 243 / 88%);
+  box-shadow: 0 15px 45px rgb(64 34 39 / 8%);
+}
+
+.academic-grid span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--gold);
+  font: 800 16px/1 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.argument-list {
+  display: grid;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.argument-list li {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 28px;
+  border: 1px solid rgb(143 33 49 / 18%);
+  background: rgb(255 250 243 / 86%);
+}
+
+.argument-list strong {
+  color: var(--wine);
+  font: 800 25px/1 ui-sans-serif, system-ui, sans-serif;
+}

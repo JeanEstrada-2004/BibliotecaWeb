@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Template académico con brand USMP para BibliotecaWeb.">
+    <title>Título académico</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Título académico"
+    >
+      <div class="slides">
+        <section data-slide data-slide-id="portada" data-brand-chrome="full" aria-labelledby="titulo-portada">
+          <div class="academic-cover">
+            <p class="overline">Unidad o semana</p>
+            <h1 id="titulo-portada">Título académico</h1>
+            <p class="subtitle">Problema, perspectiva o pregunta central de la exposición.</p>
+          </div>
+        </section>
+
+        <section data-slide data-slide-id="contexto" data-brand-chrome="minimal" aria-labelledby="titulo-contexto">
+          <header class="section-heading">
+            <p class="overline">01 / Contexto</p>
+            <h2 id="titulo-contexto">Comenzar con el problema, no con la definición.</h2>
+          </header>
+          <div class="academic-grid">
+            <article data-step data-step-id="contexto-hecho" data-step-effect="fade-up">
+              <span>Hecho</span>
+              <p>Dato o situación que establece por qué el tema importa.</p>
+            </article>
+            <article data-step data-step-id="contexto-tension" data-step-effect="fade-up">
+              <span>Tensión</span>
+              <p>Brecha, dificultad o riesgo que requiere explicación.</p>
+            </article>
+            <article data-step data-step-id="contexto-pregunta" data-step-effect="fade-up">
+              <span>Pregunta</span>
+              <p>Interrogante que guiará el resto de la presentación.</p>
+            </article>
+          </div>
+        </section>
+
+        <section data-slide data-slide-id="desarrollo" data-brand-chrome="minimal" aria-labelledby="titulo-desarrollo">
+          <header class="section-heading">
+            <p class="overline">02 / Desarrollo</p>
+            <h2 id="titulo-desarrollo">Construir el argumento paso a paso.</h2>
+          </header>
+          <ol class="argument-list">
+            <li data-step data-step-id="argumento-uno" data-step-effect="fade-up"><strong>01</strong><span>Concepto o evidencia principal.</span></li>
+            <li data-step data-step-id="argumento-dos" data-step-effect="fade-up"><strong>02</strong><span>Relación con el caso estudiado.</span></li>
+            <li data-step data-step-id="argumento-tres" data-step-effect="fade-up"><strong>03</strong><span>Implicación para la decisión.</span></li>
+          </ol>
+        </section>
+
+        <section data-slide data-slide-id="cierre" data-brand-chrome="full" aria-labelledby="titulo-cierre">
+          <p class="overline">Síntesis</p>
+          <h2 id="titulo-cierre">Una conclusión concreta y defendible.</h2>
+          <p class="subtitle">Resume el aprendizaje y conecta con la siguiente acción o discusión.</p>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta
+      name="description"
+      content="Presentación introductoria sobre auditoría de sistemas y caso canónico del Presentation Runtime V1."
+    >
+    <title>Introducción a la Auditoría de Sistemas</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#proposito">Ir al contenido</a>
+
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Introducción a la Auditoría de Sistemas"
+    >
+      <div class="slides">
+        <section
+          data-slide
+          data-slide-id="portada"
+          data-transition="fade"
+          data-brand-chrome="full"
+          aria-labelledby="titulo-portada"
+        >
+          <div class="cover-grid">
+            <div class="cover-copy">
+              <p class="eyebrow">Seguridad y Auditoría de Sistemas de Información</p>
+              <h1 id="titulo-portada">Auditar no es buscar culpables.</h1>
+              <p class="cover-lead">
+                Es convertir incertidumbre en evidencia para tomar mejores decisiones.
+              </p>
+            </div>
+
+            <div class="audit-signal" aria-hidden="true">
+              <span class="signal-ring signal-ring--outer"></span>
+              <span class="signal-ring signal-ring--middle"></span>
+              <span class="signal-ring signal-ring--inner"></span>
+              <span class="signal-core">01</span>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <span>Introducción a la Auditoría de Sistemas</span>
+            <span>Usa ← → o espacio</span>
+          </footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="proposito"
+          data-transition="slide"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-proposito"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">01 / Propósito</p>
+            <h2 id="titulo-proposito">Una auditoría responde tres preguntas.</h2>
+          </header>
+
+          <div class="question-grid">
+            <article class="question-card" data-step data-step-id="pregunta-realidad" data-step-effect="fade-up">
+              <span class="question-index">A</span>
+              <h3>¿Qué está ocurriendo?</h3>
+              <p>Observa procesos, tecnología y comportamiento sin depender de suposiciones.</p>
+            </article>
+
+            <article class="question-card" data-step data-step-id="pregunta-riesgo" data-step-effect="fade-up">
+              <span class="question-index">B</span>
+              <h3>¿Qué podría salir mal?</h3>
+              <p>Relaciona amenazas y vulnerabilidades con impactos concretos para el negocio.</p>
+            </article>
+
+            <article class="question-card question-card--accent" data-step data-step-id="pregunta-decision" data-step-effect="scale-in">
+              <span class="question-index">C</span>
+              <h3>¿Qué debemos decidir?</h3>
+              <p>Prioriza controles y mejoras según evidencia, costo y exposición real.</p>
+            </article>
+          </div>
+
+          <p class="takeaway" data-step data-step-id="proposito-conclusion" data-step-effect="appear">
+            Auditar conecta <strong>realidad</strong>, <strong>riesgo</strong> y <strong>decisión</strong>.
+          </p>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="recorrido"
+          data-transition="slide"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-recorrido"
+        >
+          <header class="section-heading section-heading--compact">
+            <p class="eyebrow">02 / Recorrido</p>
+            <h2 id="titulo-recorrido">El valor aparece cuando el proceso cierra el ciclo.</h2>
+          </header>
+
+          <ol class="audit-route" aria-label="Etapas de una auditoría">
+            <li data-step data-step-id="etapa-alcance" data-step-effect="fade-up">
+              <span class="route-number">01</span>
+              <div>
+                <h3>Alcance</h3>
+                <p>Qué se revisará, por qué y con qué criterio.</p>
+              </div>
+            </li>
+            <li data-step data-step-id="etapa-evidencia" data-step-effect="fade-up">
+              <span class="route-number">02</span>
+              <div>
+                <h3>Evidencia</h3>
+                <p>Qué hechos permiten sostener una conclusión.</p>
+              </div>
+            </li>
+            <li data-step data-step-id="etapa-hallazgo" data-step-effect="fade-up">
+              <span class="route-number">03</span>
+              <div>
+                <h3>Hallazgo</h3>
+                <p>Qué diferencia existe entre criterio y realidad.</p>
+              </div>
+            </li>
+            <li data-step data-step-id="etapa-mejora" data-step-effect="fade-up">
+              <span class="route-number">04</span>
+              <div>
+                <h3>Mejora</h3>
+                <p>Qué acción reduce el riesgo y quién la asume.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="route-close" data-step data-step-id="cierre-seguimiento" data-step-effect="appear">
+            <span aria-hidden="true">↺</span>
+            <p><strong>Seguimiento:</strong> comprobar que la mejora funciona, no solo que fue prometida.</p>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="riesgo-control"
+          data-transition="zoom"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-riesgo"
+        >
+          <header class="section-heading section-heading--compact">
+            <p class="eyebrow">03 / Riesgo y control</p>
+            <h2 id="titulo-riesgo">Un control solo importa si modifica el riesgo.</h2>
+          </header>
+
+          <div class="risk-equation" aria-label="Relación entre amenaza, vulnerabilidad, impacto y control">
+            <div class="equation-term" data-step data-step-id="termino-amenaza" data-step-effect="scale-in" data-step-index="0">
+              <span>Amenaza</span>
+              <strong>Evento posible</strong>
+            </div>
+            <span class="equation-operator" data-step data-step-id="operador-uno" data-step-effect="appear" data-step-index="0" aria-hidden="true">×</span>
+            <div class="equation-term" data-step data-step-id="termino-vulnerabilidad" data-step-effect="scale-in" data-step-index="1">
+              <span>Vulnerabilidad</span>
+              <strong>Debilidad existente</strong>
+            </div>
+            <span class="equation-operator" data-step data-step-id="operador-dos" data-step-effect="appear" data-step-index="1" aria-hidden="true">×</span>
+            <div class="equation-term" data-step data-step-id="termino-impacto" data-step-effect="scale-in" data-step-index="2">
+              <span>Impacto</span>
+              <strong>Consecuencia</strong>
+            </div>
+          </div>
+
+          <div class="risk-result" data-step data-step-id="resultado-riesgo" data-step-effect="fade-up" data-step-index="3">
+            <div>
+              <span class="result-label">Riesgo</span>
+              <strong>Exposición que necesita una decisión</strong>
+            </div>
+            <span class="result-arrow" aria-hidden="true">→</span>
+            <div class="control-pill">
+              <span>Control</span>
+              <strong>Previene · detecta · corrige</strong>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="evidencia"
+          data-transition="fade"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-evidencia"
+        >
+          <header class="section-heading section-heading--compact">
+            <p class="eyebrow">04 / Evidencia</p>
+            <h2 id="titulo-evidencia">Una afirmación se fortalece en tres capas.</h2>
+          </header>
+
+          <div class="evidence-scene" data-evidence-scene data-active-level="none">
+            <article
+              class="evidence-card"
+              data-evidence-level="contextual"
+              data-step
+              data-step-id="evidencia-contextual"
+              data-step-effect="fade-up"
+            >
+              <span class="evidence-level">01</span>
+              <h3>Contextual</h3>
+              <p>Explica dónde, cuándo y bajo qué condición ocurrió.</p>
+            </article>
+            <article
+              class="evidence-card"
+              data-evidence-level="corroborada"
+              data-step
+              data-step-id="evidencia-corroborada"
+              data-step-effect="fade-up"
+            >
+              <span class="evidence-level">02</span>
+              <h3>Corroborada</h3>
+              <p>Coincide con otra fuente, registro o prueba independiente.</p>
+            </article>
+            <article
+              class="evidence-card"
+              data-evidence-level="trazable"
+              data-step
+              data-step-id="evidencia-trazable"
+              data-step-effect="fade-up"
+            >
+              <span class="evidence-level">03</span>
+              <h3>Trazable</h3>
+              <p>Permite reconstruir cómo se obtuvo y quién la custodió.</p>
+            </article>
+          </div>
+
+          <p class="evidence-caption" data-evidence-caption aria-live="polite">
+            Avanza para construir una evidencia defendible.
+          </p>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="cierre"
+          data-transition="fade"
+          data-brand-chrome="full"
+          aria-labelledby="titulo-cierre"
+        >
+          <div class="closing-layout">
+            <div>
+              <p class="eyebrow">05 / Idea final</p>
+              <h2 id="titulo-cierre">Una buena auditoría deja menos incertidumbre.</h2>
+              <p class="closing-lead">
+                No termina con un informe: termina cuando la organización puede decidir y comprobar una mejora.
+              </p>
+            </div>
+
+            <ul class="closing-checks" aria-label="Principios finales">
+              <li data-step data-step-id="cierre-evidencia" data-step-effect="fade-up">
+                <span aria-hidden="true">✓</span> Evidencia antes que intuición
+              </li>
+              <li data-step data-step-id="cierre-riesgo" data-step-effect="fade-up">
+                <span aria-hidden="true">✓</span> Riesgo antes que burocracia
+              </li>
+              <li data-step data-step-id="cierre-mejora" data-step-effect="fade-up">
+                <span aria-hidden="true">✓</span> Seguimiento antes que cierre
+              </li>
+            </ul>
+          </div>
+
+          <footer class="closing-footer">
+            <span>Presentation Runtime V1 · caso canónico</span>
+            <a href="../../../../#/ciclo-09/seguridad-auditoria">Volver a BibliotecaWeb</a>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+    <script type="module" src="presentation.js"></script>
+  </body>
+</html>

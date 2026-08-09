@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Biblioteca personal de presentaciones, mockups y páginas web estáticas.">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#173f35">
+    <title>Biblioteca Web</title>
+    <link rel="stylesheet" href="./app/portal.css">
+    <script type="module" src="./app/portal.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <a class="brand" href="#/inicio" aria-label="Ir al inicio de Biblioteca Web">
+        <span class="brand__mark" aria-hidden="true">BW</span>
+        <span class="brand__text">
+          <strong>Biblioteca Web</strong>
+          <small>Archivo personal</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Áreas principales">
+        <ul id="primary-nav-list"></ul>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow" id="hero-kicker">Archivo personal de artefactos estáticos</p>
+          <h1 id="hero-title">Biblioteca Web</h1>
+          <p class="hero__summary" id="hero-summary">
+            Un solo lugar para organizar presentaciones, mockups y páginas creadas para universidad, trabajo y proyectos personales.
+          </p>
+
+          <dl class="hero__metrics" aria-label="Resumen de la biblioteca">
+            <div>
+              <dt>Artefactos publicados</dt>
+              <dd id="metric-artifacts">—</dd>
+            </div>
+            <div>
+              <dt id="metric-secondary-label">Áreas disponibles</dt>
+              <dd id="metric-secondary">—</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="shelf" aria-hidden="true">
+          <span class="shelf__item shelf__item--one"></span>
+          <span class="shelf__item shelf__item--two"></span>
+          <span class="shelf__item shelf__item--three"></span>
+          <span class="shelf__item shelf__item--four"></span>
+          <span class="shelf__item shelf__item--five"></span>
+          <span class="shelf__line"></span>
+        </div>
+      </section>
+
+      <section class="controls-panel" aria-label="Buscar y filtrar artefactos">
+        <form class="search" id="search-form" role="search">
+          <label for="search-input">Buscar en la biblioteca</label>
+          <div class="search__field">
+            <span class="search__icon" aria-hidden="true"></span>
+            <input
+              id="search-input"
+              name="search"
+              type="search"
+              placeholder="Título, curso, área o etiqueta…"
+              autocomplete="off"
+            >
+            <button class="search__clear" id="search-clear" type="button" hidden>Limpiar</button>
+          </div>
+        </form>
+
+        <div class="filters" aria-labelledby="filter-label">
+          <span id="filter-label">Tipo</span>
+          <div class="filters__list" id="type-filters"></div>
+        </div>
+      </section>
+
+      <section class="storage-summary" id="storage-summary" aria-labelledby="storage-summary-title">
+        <div class="storage-summary__intro">
+          <span class="storage-summary__signal" data-storage-status aria-hidden="true"></span>
+          <div>
+            <p class="storage-summary__label">Estado de la biblioteca</p>
+            <h2 id="storage-summary-title" data-storage-title>Calculando la huella actual…</h2>
+          </div>
+        </div>
+        <div class="storage-summary__reading">
+          <strong data-storage-size>—</strong>
+          <span data-storage-count>— artefactos</span>
+        </div>
+        <div class="storage-summary__progress">
+          <progress data-storage-progress max="100" value="0">0%</progress>
+          <span data-storage-percentage>Política interna</span>
+        </div>
+        <a class="storage-summary__link" href="./estado/">Ver estado completo →</a>
+      </section>
+
+      <nav class="breadcrumb" id="breadcrumb" aria-label="Ruta actual" hidden></nav>
+
+      <section class="content-section" id="areas-section" aria-labelledby="areas-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-heading__index">01</p>
+            <h2 id="areas-title">Explorar por área</h2>
+          </div>
+          <p>Elige el contexto en el que fue creado cada artefacto.</p>
+        </div>
+        <div class="area-grid" id="area-grid"></div>
+      </section>
+
+      <section class="content-section" id="collections-section" aria-labelledby="collections-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="section-heading__index">01</p>
+            <h2 id="collections-title">Colecciones</h2>
+          </div>
+          <p id="collections-summary"></p>
+        </div>
+        <div class="collection-grid" id="collection-grid"></div>
+      </section>
+
+      <section class="content-section artifacts-section" id="artifacts-section" aria-labelledby="artifacts-title">
+        <div class="section-heading section-heading--results">
+          <div>
+            <p class="section-heading__index">02</p>
+            <h2 id="artifacts-title">Publicaciones recientes</h2>
+          </div>
+          <p id="results-summary" aria-live="polite">Cargando catálogo…</p>
+        </div>
+        <div class="artifact-grid" id="artifact-grid" aria-live="polite" aria-busy="true"></div>
+      </section>
+
+      <section class="load-error" id="load-error" role="alert" hidden>
+        <p class="eyebrow">No se pudo abrir la biblioteca</p>
+        <h2>El catálogo no está disponible.</h2>
+        <p id="load-error-message">Intenta recargar la página desde un servidor HTTP.</p>
+        <button type="button" id="reload-button">Volver a intentar</button>
+      </section>
+
+      <p class="sr-only" id="action-status" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <p>Biblioteca Web <span aria-hidden="true">·</span> Universidad, trabajo y proyectos personales.</p>
+      <a href="#/inicio">Volver al inicio</a>
+    </footer>
+
+    <noscript>
+      <p class="noscript-message">Este portal necesita JavaScript para leer y organizar el catálogo.</p>
+    </noscript>
+  </body>
+</html>

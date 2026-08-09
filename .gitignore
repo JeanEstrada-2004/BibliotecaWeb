@@ -1,0 +1,21 @@
+# Sistemas operativos y editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+__pycache__/
+*.py[cod]
+
+# Información local o privada
+.env
+.env.*
+!.env.example
+/private/
+*.private.*
+*.local.json

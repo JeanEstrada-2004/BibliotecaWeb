@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "areas": [
+    {
+      "id": "ciclo-09",
+      "label": "9.º ciclo",
+      "description": "Cursos, exposiciones y entregables del noveno ciclo.",
+      "order": 1
+    },
+    {
+      "id": "ciclo-10",
+      "label": "10.º ciclo",
+      "description": "Espacio preparado para los cursos y proyectos del décimo ciclo.",
+      "order": 2
+    },
+    {
+      "id": "trabajo",
+      "label": "Trabajo",
+      "description": "Presentaciones, mockups y prototipos demostrativos del ámbito profesional.",
+      "order": 3
+    },
+    {
+      "id": "personal",
+      "label": "Personal / Extras",
+      "description": "Páginas, demos y experimentos que viven fuera del ámbito académico o laboral.",
+      "order": 4
+    }
+  ],
+  "collections": [
+    {
+      "id": "gestion-innovacion",
+      "areaId": "ciclo-09",
+      "label": "Gestión de la Innovación",
+      "order": 1
+    },
+    {
+      "id": "gestion-proyectos-pmi",
+      "areaId": "ciclo-09",
+      "label": "Gestión de Proyectos PMI",
+      "order": 2
+    },
+    {
+      "id": "inteligencia-negocios",
+      "areaId": "ciclo-09",
+      "label": "Inteligencia de Negocios",
+      "order": 3
+    },
+    {
+      "id": "planeamiento-estrategico-ti",
+      "areaId": "ciclo-09",
+      "label": "Planeamiento Estratégico de TI",
+      "order": 4
+    },
+    {
+      "id": "proyecto-final",
+      "areaId": "ciclo-09",
+      "label": "Proyecto Final de Ingeniería de Computación y Sistemas",
+      "order": 5
+    },
+    {
+      "id": "seguridad-auditoria",
+      "areaId": "ciclo-09",
+      "label": "Seguridad y Auditoría de Sistemas de Información",
+      "order": 6
+    },
+    {
+      "id": "etica-moral",
+      "areaId": "ciclo-09",
+      "label": "Ética y Moral",
+      "order": 7
+    },
+    {
+      "id": "general",
+      "areaId": "trabajo",
+      "label": "General",
+      "order": 1
+    },
+    {
+      "id": "general",
+      "areaId": "personal",
+      "label": "General",
+      "order": 1
+    }
+  ],
+  "types": [
+    {
+      "id": "presentation",
+      "label": "Presentación",
+      "description": "Exposición web basada en diapositivas.",
+      "order": 1
+    },
+    {
+      "id": "mockup",
+      "label": "Mockup",
+      "description": "Interfaz o flujo funcional simulado.",
+      "order": 2
+    },
+    {
+      "id": "page",
+      "label": "Página",
+      "description": "Página, demo o experimento web independiente.",
+      "order": 3
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "ciclo-09-introduccion-auditoria-sistemas",
+      "title": "Introducción a la Auditoría de Sistemas",
+      "slug": "introduccion-auditoria-sistemas",
+      "areaId": "ciclo-09",
+      "collectionId": "seguridad-auditoria",
+      "type": "presentation",
+      "summary": "Recorrido visual por el propósito, el riesgo, la evidencia y el seguimiento de una auditoría de sistemas.",
+      "status": "published",
+      "publishedAt": "2026-08-09",
+      "tags": [
+        "auditoría de sistemas",
+        "riesgos",
+        "controles",
+        "evidencia"
+      ],
+      "featured": true
+    },
+    {
+      "id": "personal-anatomia-biblioteca-web",
+      "title": "Anatomía de BibliotecaWeb",
+      "slug": "anatomia-biblioteca-web",
+      "areaId": "personal",
+      "collectionId": "general",
+      "type": "page",
+      "summary": "Recorrido interactivo por el portal, el catálogo y la independencia de cada artefacto.",
+      "status": "published",
+      "publishedAt": "2026-08-08",
+      "tags": [
+        "arquitectura web",
+        "sitio estático",
+        "demo interactiva"
+      ],
+      "featured": true
+    }
+  ]
+}

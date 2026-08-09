@@ -1,0 +1,40 @@
+@layer pc-effects {
+  .pc-presentation .pc-step {
+    transition-duration: min(var(--pc-transition-duration, 600ms), 520ms);
+    transition-property: opacity, transform, filter;
+    transition-timing-function: cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  .pc-presentation .pc-step--fade,
+  .pc-presentation .pc-step--fade-up,
+  .pc-presentation .pc-step--scale-in,
+  .pc-presentation .pc-step--appear {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .pc-presentation .pc-step--fade-up {
+    transform: translateY(30px);
+  }
+
+  .pc-presentation .pc-step--scale-in {
+    transform: scale(0.94);
+  }
+
+  .pc-presentation .pc-step--appear {
+    filter: blur(8px);
+  }
+
+  .pc-presentation .pc-step--none {
+    visibility: hidden;
+    opacity: 1;
+    transition: none;
+  }
+
+  .pc-presentation .pc-step.visible {
+    visibility: inherit;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}

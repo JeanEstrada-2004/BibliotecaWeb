@@ -1,0 +1,26 @@
+{
+  "contractVersion": 1,
+  "presentationId": "template-academic",
+  "brand": "usmp",
+  "brandData": {
+    "faculty": "Facultad de Ingeniería y Arquitectura",
+    "school": "Escuela Profesional de Ingeniería de Computación y Sistemas",
+    "course": "Nombre del curso",
+    "author": "Nombre del estudiante"
+  },
+  "homeHref": "../../../../",
+  "aspectRatio": "16:9",
+  "chromeDefault": "minimal",
+  "transition": {
+    "default": "fade",
+    "durationMs": 550
+  },
+  "features": {
+    "controls": true,
+    "progress": true,
+    "slideNumber": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true
+  }
+}

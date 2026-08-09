@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "scope": "public-static-files",
+  "generatedAt": "2026-08-09T06:35:29Z",
+  "sourceFingerprint": "44ddb8cc6fa890baaf5ddc07fd38f3c10e9698e08bdd641625d961bd8db1d220",
+  "policy": {
+    "kind": "internal-maintenance",
+    "label": "Política interna de BibliotecaWeb",
+    "budgetBytes": 209715200,
+    "budgetPercentage": 0.23,
+    "status": {
+      "id": "excellent",
+      "label": "Excelente",
+      "tone": "positive",
+      "message": "La biblioteca mantiene una huella muy ligera."
+    }
+  },
+  "summary": {
+    "totalBytes": 479556,
+    "artifactBytes": 43082,
+    "sharedBytes": 436474,
+    "artifactCount": 2,
+    "publishedArtifactCount": 2,
+    "fileCount": 32,
+    "warningCount": 0
+  },
+  "breakdown": {
+    "areas": [
+      {
+        "id": "ciclo-09",
+        "label": "9.º ciclo",
+        "bytes": 22550,
+        "percentage": 52.34
+      },
+      {
+        "id": "personal",
+        "label": "Personal / Extras",
+        "bytes": 20532,
+        "percentage": 47.66
+      },
+      {
+        "id": "ciclo-10",
+        "label": "10.º ciclo",
+        "bytes": 0,
+        "percentage": 0.0
+      },
+      {
+        "id": "trabajo",
+        "label": "Trabajo",
+        "bytes": 0,
+        "percentage": 0.0
+      }
+    ],
+    "types": [
+      {
+        "id": "presentation",
+        "label": "Presentación",
+        "bytes": 22550,
+        "percentage": 52.34
+      },
+      {
+        "id": "page",
+        "label": "Página",
+        "bytes": 20532,
+        "percentage": 47.66
+      },
+      {
+        "id": "mockup",
+        "label": "Mockup",
+        "bytes": 0,
+        "percentage": 0.0
+      }
+    ],
+    "components": [
+      {
+        "id": "vendor",
+        "label": "Dependencias versionadas",
+        "bytes": 311890,
+        "percentage": 65.04
+      },
+      {
+        "id": "portal",
+        "label": "Portal",
+        "bytes": 60049,
+        "percentage": 12.52
+      },
+      {
+        "id": "artifacts",
+        "label": "Artefactos",
+        "bytes": 43082,
+        "percentage": 8.98
+      },
+      {
+        "id": "status-page",
+        "label": "Página de estado",
+        "bytes": 27604,
+        "percentage": 5.76
+      },
+      {
+        "id": "runtime",
+        "label": "Presentation Runtime",
+        "bytes": 26696,
+        "percentage": 5.57
+      },
+      {
+        "id": "brands",
+        "label": "Brands",
+        "bytes": 5288,
+        "percentage": 1.1
+      },
+      {
+        "id": "data",
+        "label": "Datos",
+        "bytes": 4947,
+        "percentage": 1.03
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "ciclo-09-introduccion-auditoria-sistemas",
+      "title": "Introducción a la Auditoría de Sistemas",
+      "areaId": "ciclo-09",
+      "areaLabel": "9.º ciclo",
+      "type": "presentation",
+      "typeLabel": "Presentación",
+      "status": "published",
+      "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas",
+      "bytes": 22550,
+      "fileCount": 4,
+      "percentageOfArtifacts": 52.34
+    },
+    {
+      "id": "personal-anatomia-biblioteca-web",
+      "title": "Anatomía de BibliotecaWeb",
+      "areaId": "personal",
+      "areaLabel": "Personal / Extras",
+      "type": "page",
+      "typeLabel": "Página",
+      "status": "published",
+      "path": "artefactos/personal/general/anatomia-biblioteca-web",
+      "bytes": 20532,
+      "fileCount": 3,
+      "percentageOfArtifacts": 47.66
+    }
+  ],
+  "largestFiles": [
+    {
+      "path": "vendor/reveal/6.0.1/dist/reveal.mjs",
+      "bytes": 139091,
+      "sha256": "4bbf460b02602dd2d73c86622a84b7004aca667f8719b9ce3e89fcb64a7dcfaa"
+    },
+    {
+      "path": "vendor/reveal/6.0.1/dist/reveal.js",
+      "bytes": 117343,
+      "sha256": "3fb84c30d2e610dd598843d75a123ef2c4dbc588847cda86cd8c7a61e18ddb6b"
+    },
+    {
+      "path": "vendor/reveal/6.0.1/dist/reveal.css",
+      "bytes": 53748,
+      "sha256": "64e6203ee2048665c9f49c368f345fb3d7f936c404934162c70369a7682f388f"
+    },
+    {
+      "path": "app/portal.js",
+      "bytes": 29034,
+      "sha256": "4b396bb69d83efe502d9c2ef616eb7852dbae4667956dad86a61a0ed94210619"
+    },
+    {
+      "path": "app/portal.css",
+      "bytes": 24592,
+      "sha256": "81a2b0d779b19115c957cc9ef92fcd88aa105ee6628d07f1e3ffea27d887854a"
+    },
+    {
+      "path": "runtime/presentation/v1/runtime.js",
+      "bytes": 21222,
+      "sha256": "a12b83bee30ed7ddd25dc71f0d135be9c4c38f39bb452fa4dba3d4f1d0aa4461"
+    },
+    {
+      "path": "estado/estado.css",
+      "bytes": 13099,
+      "sha256": "c8d7e44584e02f8fcaef2a7a2c9c2c36a09029e71ed096ad5f2c54e3e18f830b"
+    },
+    {
+      "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas/index.html",
+      "bytes": 11496,
+      "sha256": "4753b317c0d0a232b109e2aac859e1ace60bb4663edf81e1d64e9d64a814dc31"
+    }
+  ],
+  "duplicates": [],
+  "warnings": [],
+  "measurement": {
+    "includedDirectories": [
+      "app",
+      "artefactos",
+      "brands",
+      "data",
+      "estado",
+      "runtime",
+      "shared",
+      "vendor"
+    ],
+    "excludedGeneratedFiles": [
+      "data/stats.json"
+    ],
+    "note": "Mide la huella web publicable; excluye documentación, schemas, templates y herramientas."
+  }
+}

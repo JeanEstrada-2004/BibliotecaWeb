@@ -1,0 +1,20 @@
+{
+  "contractVersion": 1,
+  "presentationId": "template-blank",
+  "brand": null,
+  "homeHref": "../../../../",
+  "aspectRatio": "16:9",
+  "chromeDefault": "none",
+  "transition": {
+    "default": "fade",
+    "durationMs": 500
+  },
+  "features": {
+    "controls": true,
+    "progress": true,
+    "slideNumber": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true
+  }
+}

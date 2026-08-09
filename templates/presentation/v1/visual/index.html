@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Template visual para una presentación de BibliotecaWeb.">
+    <title>Historia visual</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Historia visual"
+    >
+      <div class="slides">
+        <section data-slide data-slide-id="portada" data-transition="zoom" data-brand-chrome="none" aria-labelledby="titulo-portada">
+          <div class="visual-cover">
+            <p class="label">Tema / Categoría</p>
+            <h1 id="titulo-portada">Una historia que se entiende al verla.</h1>
+            <span class="orb" aria-hidden="true"></span>
+          </div>
+        </section>
+
+        <section data-slide data-slide-id="metricas" data-transition="slide" data-brand-chrome="none" aria-labelledby="titulo-metricas">
+          <header>
+            <p class="label">01 / Señales</p>
+            <h2 id="titulo-metricas">Tres datos. Una sola lectura.</h2>
+          </header>
+          <div class="metric-grid">
+            <article data-step data-step-id="metrica-uno" data-step-effect="scale-in"><strong>64%</strong><span>Métrica principal</span></article>
+            <article data-step data-step-id="metrica-dos" data-step-effect="scale-in"><strong>2.4×</strong><span>Relación relevante</span></article>
+            <article data-step data-step-id="metrica-tres" data-step-effect="scale-in"><strong>08</strong><span>Casos observados</span></article>
+          </div>
+        </section>
+
+        <section data-slide data-slide-id="cierre" data-transition="fade" data-brand-chrome="none" aria-labelledby="titulo-cierre">
+          <p class="label">Conclusión</p>
+          <h2 id="titulo-cierre">El dato importa cuando cambia una decisión.</h2>
+          <p class="visual-lead">Reemplaza la decoración por contenido visual cuando exista evidencia real.</p>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+  </body>
+</html>

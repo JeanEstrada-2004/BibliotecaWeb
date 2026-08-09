@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./stats.schema.json",
+  "title": "Estadísticas generadas de BibliotecaWeb",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "scope",
+    "generatedAt",
+    "sourceFingerprint",
+    "policy",
+    "summary",
+    "breakdown",
+    "artifacts",
+    "largestFiles",
+    "duplicates",
+    "warnings",
+    "measurement"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "scope": { "const": "public-static-files" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "label", "budgetBytes", "budgetPercentage", "status"],
+      "properties": {
+        "kind": { "const": "internal-maintenance" },
+        "label": { "type": "string", "minLength": 1 },
+        "budgetBytes": { "type": "integer", "minimum": 1 },
+        "budgetPercentage": { "type": "number", "minimum": 0 },
+        "status": { "$ref": "#/$defs/status" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["totalBytes", "artifactBytes", "sharedBytes", "artifactCount", "publishedArtifactCount", "fileCount", "warningCount"],
+      "properties": {
+        "totalBytes": { "type": "integer", "minimum": 0 },
+        "artifactBytes": { "type": "integer", "minimum": 0 },
+        "sharedBytes": { "type": "integer", "minimum": 0 },
+        "artifactCount": { "type": "integer", "minimum": 0 },
+        "publishedArtifactCount": { "type": "integer", "minimum": 0 },
+        "fileCount": { "type": "integer", "minimum": 0 },
+        "warningCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "breakdown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["areas", "types", "components"],
+      "properties": {
+        "areas": { "type": "array", "items": { "$ref": "#/$defs/breakdownItem" } },
+        "types": { "type": "array", "items": { "$ref": "#/$defs/breakdownItem" } },
+        "components": { "type": "array", "items": { "$ref": "#/$defs/breakdownItem" } }
+      }
+    },
+    "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifact" } },
+    "largestFiles": { "type": "array", "items": { "$ref": "#/$defs/file" } },
+    "duplicates": { "type": "array", "items": { "$ref": "#/$defs/duplicate" } },
+    "warnings": { "type": "array", "items": { "$ref": "#/$defs/warning" } },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["includedDirectories", "excludedGeneratedFiles", "note"],
+      "properties": {
+        "includedDirectories": { "type": "array", "items": { "type": "string" } },
+        "excludedGeneratedFiles": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "tone", "message"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "tone": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "breakdownItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "bytes", "percentage"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "percentage": { "type": "number", "minimum": 0 }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "areaId", "areaLabel", "type", "typeLabel", "status", "path", "bytes", "fileCount", "percentageOfArtifacts"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "areaId": { "type": "string", "minLength": 1 },
+        "areaLabel": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "typeLabel": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "fileCount": { "type": "integer", "minimum": 0 },
+        "percentageOfArtifacts": { "type": "number", "minimum": 0 }
+      }
+    },
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "duplicate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "bytesEach", "copies", "repeatedBytes", "paths"],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytesEach": { "type": "integer", "minimum": 0 },
+        "copies": { "type": "integer", "minimum": 2 },
+        "repeatedBytes": { "type": "integer", "minimum": 0 },
+        "paths": { "type": "array", "minItems": 2, "items": { "type": "string" } }
+      }
+    },
+    "warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "severity", "location", "message"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "severity": { "const": "warning" },
+        "location": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

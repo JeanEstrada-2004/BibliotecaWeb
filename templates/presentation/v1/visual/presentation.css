@@ -1,0 +1,126 @@
+:root {
+  --night: #080913;
+  --panel: #14182a;
+  --ink: #f7f5ff;
+  --muted: #aaa8bd;
+  --violet: #9f7aea;
+  --cyan: #59e1dc;
+  --pc-viewport-background: var(--night);
+  --pc-slide-background: var(--night);
+  --pc-runtime-accent: var(--cyan);
+  --pc-runtime-ink: var(--ink);
+  --pc-runtime-control: rgb(8 9 19 / 82%);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.reveal {
+  color: var(--ink);
+  background: var(--night);
+  font-family: inherit;
+}
+
+.reveal .slides > .pc-slide {
+  display: grid;
+  align-content: center;
+  gap: 42px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 84% 18%, rgb(159 122 234 / 18%), transparent 30%),
+    linear-gradient(135deg, #080913, #101426);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal p {
+  margin: 0;
+}
+
+.reveal h1,
+.reveal h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  color: var(--ink);
+  font-family: inherit;
+  font-weight: 820;
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 104px;
+}
+
+.reveal h2 {
+  font-size: 68px;
+}
+
+.reveal p,
+.reveal span {
+  color: var(--muted);
+  font-size: 21px;
+}
+
+.label {
+  color: var(--cyan) !important;
+  font-size: 15px !important;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.visual-cover {
+  position: relative;
+  display: grid;
+  gap: 32px;
+}
+
+.orb {
+  position: absolute;
+  z-index: 0;
+  right: 40px;
+  bottom: -145px;
+  width: 470px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(89 225 220 / 38%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgb(89 225 220 / 60%), transparent 18%),
+    radial-gradient(circle, rgb(159 122 234 / 28%), transparent 68%);
+  box-shadow: 0 0 90px rgb(159 122 234 / 18%);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.metric-grid article {
+  display: grid;
+  min-height: 260px;
+  align-content: space-between;
+  padding: 32px;
+  border: 1px solid rgb(159 122 234 / 22%);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgb(28 34 59 / 94%), rgb(13 16 31 / 96%));
+}
+
+.metric-grid strong {
+  color: var(--ink);
+  font-size: 76px;
+  letter-spacing: -0.07em;
+}
+
+.metric-grid span {
+  color: var(--cyan);
+  font-weight: 650;
+}
+
+.visual-lead {
+  max-width: 900px;
+  color: #d4d1df !important;
+  font-size: 29px !important;
+  line-height: 1.45;
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "internal-maintenance",
+  "label": "Política interna de BibliotecaWeb",
+  "budgetBytes": 209715200,
+  "fileWarningBytes": 5242880,
+  "artifactWarningBytes": 26214400,
+  "duplicateMinimumBytes": 4096,
+  "concentrationPercentage": 65,
+  "minimumArtifactsForConcentration": 5,
+  "topItemsLimit": 8,
+  "levels": [
+    {
+      "id": "excellent",
+      "label": "Excelente",
+      "tone": "positive",
+      "minPercentage": 0,
+      "message": "La biblioteca mantiene una huella muy ligera."
+    },
+    {
+      "id": "normal",
+      "label": "Normal",
+      "tone": "neutral",
+      "minPercentage": 20,
+      "message": "El crecimiento permanece dentro del margen previsto."
+    },
+    {
+      "id": "watch",
+      "label": "Vigilar",
+      "tone": "attention",
+      "minPercentage": 45,
+      "message": "Conviene revisar los artefactos y archivos más pesados."
+    },
+    {
+      "id": "consider-split",
+      "label": "Considerar separación",
+      "tone": "warning",
+      "minPercentage": 70,
+      "message": "Conviene evaluar si un área o tipo debería independizarse."
+    },
+    {
+      "id": "critical",
+      "label": "Crítico",
+      "tone": "critical",
+      "minPercentage": 90,
+      "message": "La huella supera el margen interno aceptable y requiere una decisión."
+    }
+  ]
+}
