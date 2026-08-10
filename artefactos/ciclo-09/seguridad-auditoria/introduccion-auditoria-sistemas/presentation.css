@@ -495,20 +495,6 @@ body {
   align-items: center;
 }
 
-.closing-footer a {
-  padding: 10px 16px;
-  border: 1px solid rgb(88 240 173 / 45%);
-  border-radius: 999px;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.closing-footer a:hover,
-.closing-footer a:focus-visible {
-  color: #062017;
-  background: var(--accent);
-}
-
 @media (max-width: 700px) {
   .pc-fullscreen-control {
     top: 14px;

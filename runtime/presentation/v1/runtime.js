@@ -47,7 +47,6 @@ function validateConfig(rawConfig) {
       "presentationId",
       "brand",
       "brandData",
-      "homeHref",
       "aspectRatio",
       "chromeDefault",
       "transition",
@@ -86,20 +85,6 @@ function validateConfig(rawConfig) {
     rawConfig.brand !== null && rawConfig.brand !== undefined || Object.keys(brandData).length === 0,
     "brandData requiere un brand declarado.",
   );
-  const homeHref = rawConfig.homeHref ?? "../../../../";
-  const homeHasProtocol = /^[a-z][a-z\d+.-]*:/i.test(homeHref);
-  assert(
-    typeof homeHref === "string" &&
-      homeHref.trim() === homeHref &&
-      homeHref.length > 0 &&
-      homeHref.length <= 256 &&
-      !homeHref.startsWith("/") &&
-      !homeHref.startsWith("\\") &&
-      !homeHasProtocol &&
-      !homeHref.includes("?") &&
-      !homeHref.includes("#"),
-    "homeHref debe ser una ruta local relativa de hasta 256 caracteres.",
-  );
   assert(rawConfig.aspectRatio === "16:9", 'aspectRatio debe ser "16:9".');
   assert(
     CHROME_LEVELS.has(rawConfig.chromeDefault),
@@ -133,7 +118,6 @@ function validateConfig(rawConfig) {
     presentationId: rawConfig.presentationId,
     brand: rawConfig.brand ?? null,
     brandData,
-    homeHref,
     aspectRatio: "16:9",
     chromeDefault: rawConfig.chromeDefault,
     transition: {
@@ -395,29 +379,10 @@ function createFullscreenControl(root, enabled) {
   return { button, supported };
 }
 
-function createHomeControl(root, homeHref) {
-  const link = document.createElement("a");
-  link.className = "pc-home-control";
-  link.dataset.pcRuntimeControl = "home";
-  link.href = new URL(homeHref, document.baseURI).href;
-  link.setAttribute("aria-label", "Volver a BibliotecaWeb");
-  link.title = "Volver a BibliotecaWeb";
-
-  const icon = document.createElement("span");
-  icon.setAttribute("aria-hidden", "true");
-  icon.textContent = "←";
-  const label = document.createElement("span");
-  label.textContent = "Biblioteca";
-  link.append(icon, label);
-  root.append(link);
-  return link;
-}
-
 function createController(root, deck, slides, config, motionQuery, brandController) {
   let destroyed = false;
   let lastState = null;
   let stepChangeQueued = false;
-  const home = createHomeControl(root, config.homeHref);
   const fullscreen = createFullscreenControl(root, config.features.fullscreen);
 
   const currentState = () => makeState(deck, slides, config);
@@ -579,7 +544,6 @@ function createController(root, deck, slides, config, motionQuery, brandControll
       document.removeEventListener("fullscreenchange", updateFullscreenState);
       document.removeEventListener("keydown", onKeydown, true);
       motionQuery.removeEventListener("change", onMotionPreferenceChanged);
-      home.remove();
       fullscreen.button.remove();
       brandController?.destroy();
       deck.destroy();

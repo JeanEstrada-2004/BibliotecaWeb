@@ -2,7 +2,7 @@
 
 ## Estado
 
-El runtime está implementado en `runtime/presentation/v1/`. Su contrato público es V1 y su versión de implementación actual es `1.2.0`.
+El runtime está implementado en `runtime/presentation/v1/`. Su contrato público es V1 y su versión de implementación actual es `1.3.0`.
 
 Reveal.js `6.0.1` funciona como motor interno fijado localmente en `vendor/reveal/6.0.1/`. Las presentaciones no importan, configuran ni utilizan directamente su API.
 
@@ -18,7 +18,6 @@ Capacidades implementadas:
 - navegación mediante controles, teclado y touch;
 - progreso y número de slide;
 - pantalla completa mediante botón o tecla `F`;
-- regreso a BibliotecaWeb mediante un control común;
 - steps declarativos y reversibles;
 - transiciones `none`, `fade`, `slide` y `zoom`;
 - efectos de step `fade`, `fade-up`, `scale-in`, `appear` y `none`;
@@ -126,7 +125,6 @@ Cada `data-step-id` es único dentro de su slide. El código particular debe der
     "school": "Escuela Profesional de Ingeniería de Computación y Sistemas",
     "course": "Seguridad y Auditoría de Sistemas de Información"
   },
-  "homeHref": "../../../../",
   "aspectRatio": "16:9",
   "chromeDefault": "none",
   "transition": {
@@ -147,8 +145,6 @@ Cada `data-step-id` es único dentro de su slide. El código particular debe der
 El esquema normativo está en `schemas/presentation-config.schema.json`. No se permiten campos adicionales.
 
 `brandData` es opcional, requiere un `brand` declarado y solo admite claves camelCase con valores de texto o `null`. Cada texto puede contener hasta 160 caracteres. Debe incluir únicamente información pública adecuada para el sitio.
-
-`homeHref` es opcional y por defecto utiliza `../../../../`, que corresponde a la profundidad canónica. Solo acepta una ruta local relativa y puede adaptarse si la presentación se extrae a otra ubicación.
 
 ## Branding
 
@@ -181,7 +177,7 @@ Cuando las funciones correspondientes están activas:
 - `F`: entrar o salir de pantalla completa;
 - `Esc`: salir de pantalla completa.
 
-Los controles, el progreso, el número de slide y el enlace `← Biblioteca` pertenecen al runtime. La vista general de Reveal.js permanece desactivada. Una presentación puede adaptar el color de los controles mediante variables CSS, pero no debe depender de las clases internas del motor.
+Los controles, el progreso y el número de slide pertenecen al runtime. Las presentaciones no muestran un enlace directo al portal, para que una URL compartida mantenga el foco en el contenido. La vista general de Reveal.js permanece desactivada. Una presentación puede adaptar el color de los controles mediante variables CSS, pero no debe depender de las clases internas del motor.
 
 ## Eventos públicos
 
@@ -261,7 +257,6 @@ El runtime consulta `prefers-reduced-motion`, cambia las transiciones de slide a
 - configuración válida;
 - seis slides planas;
 - navegación y fullscreen;
-- regreso a la biblioteca;
 - las cuatro transiciones disponibles;
 - steps automáticos y steps simultáneos;
 - código particular mediante eventos;

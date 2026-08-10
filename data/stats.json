@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "scope": "public-static-files",
-  "generatedAt": "2026-08-09T07:15:23Z",
-  "sourceFingerprint": "7fcef5e95d6f5326aef15ed39c227c388954e95a4121ea687c1e047125037570",
+  "generatedAt": "2026-08-10T01:20:56Z",
+  "sourceFingerprint": "7c5e6c6d330e61693b324f700ea6bf6a3c4213fdeda18a4af6138157576eaedd",
   "policy": {
     "kind": "internal-maintenance",
     "label": "Política interna de BibliotecaWeb",
@@ -16,9 +16,9 @@
     }
   },
   "summary": {
-    "totalBytes": 721927,
-    "artifactBytes": 284672,
-    "sharedBytes": 437255,
+    "totalBytes": 720588,
+    "artifactBytes": 285568,
+    "sharedBytes": 435020,
     "artifactCount": 3,
     "publishedArtifactCount": 3,
     "fileCount": 38,
@@ -29,14 +29,14 @@
       {
         "id": "ciclo-09",
         "label": "9.º ciclo",
-        "bytes": 264140,
-        "percentage": 92.79
+        "bytes": 265036,
+        "percentage": 92.81
       },
       {
         "id": "personal",
         "label": "Personal / Extras",
         "bytes": 20532,
-        "percentage": 7.21
+        "percentage": 7.19
       },
       {
         "id": "ciclo-10",
@@ -55,14 +55,14 @@
       {
         "id": "presentation",
         "label": "Presentación",
-        "bytes": 264140,
-        "percentage": 92.79
+        "bytes": 265036,
+        "percentage": 92.81
       },
       {
         "id": "page",
         "label": "Página",
         "bytes": 20532,
-        "percentage": 7.21
+        "percentage": 7.19
       },
       {
         "id": "mockup",
@@ -76,37 +76,37 @@
         "id": "vendor",
         "label": "Dependencias versionadas",
         "bytes": 311890,
-        "percentage": 43.2
+        "percentage": 43.28
       },
       {
         "id": "artifacts",
         "label": "Artefactos",
-        "bytes": 284672,
-        "percentage": 39.43
+        "bytes": 285568,
+        "percentage": 39.63
       },
       {
         "id": "portal",
         "label": "Portal",
         "bytes": 60049,
-        "percentage": 8.32
+        "percentage": 8.33
       },
       {
         "id": "status-page",
         "label": "Página de estado",
         "bytes": 27604,
-        "percentage": 3.82
+        "percentage": 3.83
       },
       {
         "id": "runtime",
         "label": "Presentation Runtime",
-        "bytes": 26696,
-        "percentage": 3.7
+        "bytes": 24459,
+        "percentage": 3.39
       },
       {
         "id": "data",
         "label": "Datos",
-        "bytes": 5728,
-        "percentage": 0.79
+        "bytes": 5730,
+        "percentage": 0.8
       },
       {
         "id": "brands",
@@ -126,9 +126,9 @@
       "typeLabel": "Presentación",
       "status": "published",
       "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial",
-      "bytes": 241590,
+      "bytes": 242878,
       "fileCount": 6,
-      "percentageOfArtifacts": 84.87
+      "percentageOfArtifacts": 85.05
     },
     {
       "id": "ciclo-09-introduccion-auditoria-sistemas",
@@ -139,9 +139,9 @@
       "typeLabel": "Presentación",
       "status": "published",
       "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas",
-      "bytes": 22550,
+      "bytes": 22158,
       "fileCount": 4,
-      "percentageOfArtifacts": 7.92
+      "percentageOfArtifacts": 7.76
     },
     {
       "id": "personal-anatomia-biblioteca-web",
@@ -154,7 +154,7 @@
       "path": "artefactos/personal/general/anatomia-biblioteca-web",
       "bytes": 20532,
       "fileCount": 3,
-      "percentageOfArtifacts": 7.21
+      "percentageOfArtifacts": 7.19
     }
   ],
   "largestFiles": [
@@ -190,13 +190,13 @@
     },
     {
       "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial/presentation.js",
-      "bytes": 21772,
-      "sha256": "04ebcc2d5a63f3b82b7e9c7a8d05240f48dbe07f7fbeaac253ac2b6d030516b9"
+      "bytes": 22358,
+      "sha256": "07b5cd148199ff1eaba042def810d512516e6f9446b6bfdeb159f809fb2846b2"
     },
     {
       "path": "runtime/presentation/v1/runtime.js",
-      "bytes": 21222,
-      "sha256": "a12b83bee30ed7ddd25dc71f0d135be9c4c38f39bb452fa4dba3d4f1d0aa4461"
+      "bytes": 20008,
+      "sha256": "e285a3df2bff3b3eb2f6ddc4873c730d38daea567e61a1c44880728c249a4dfe"
     }
   ],
   "duplicates": [],

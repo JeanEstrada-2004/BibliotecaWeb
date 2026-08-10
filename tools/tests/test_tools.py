@@ -60,7 +60,7 @@ class ProjectValidationTests(unittest.TestCase):
             self.assertEqual("index.html", issue.location)
             self.assertIn("titulo-inexistente", issue.message)
 
-    def test_presentation_rejects_external_home_href(self) -> None:
+    def test_presentation_rejects_removed_home_href(self) -> None:
         with tempfile.TemporaryDirectory(prefix="biblioteca-home-test-") as temporary:
             root = Path(temporary) / "BibliotecaWeb"
             copy_project(PROJECT_ROOT, root)
@@ -73,20 +73,20 @@ class ProjectValidationTests(unittest.TestCase):
                 / "presentation.config.json"
             )
             config = json.loads(config_path.read_text(encoding="utf-8"))
-            config["homeHref"] = "https://example.com/"
+            config["homeHref"] = "../../../../"
             config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
 
             result = validate_project(root)
 
-            issue = next(item for item in result.errors if item.code == "presentation-home-href")
+            issue = next(item for item in result.errors if item.code == "schema-additional")
             self.assertTrue(issue.location.endswith("presentation.config.json.homeHref"))
 
-    def test_runtime_disables_overview_and_creates_home_control(self) -> None:
+    def test_runtime_disables_overview_and_has_no_home_control(self) -> None:
         source = (PROJECT_ROOT / "runtime" / "presentation" / "v1" / "runtime.js").read_text(
             encoding="utf-8"
         )
         self.assertIn("overview: false", source)
-        self.assertIn('link.className = "pc-home-control"', source)
+        self.assertNotIn("pc-home-control", source)
 
 
 class ProjectStatsTests(unittest.TestCase):
@@ -103,7 +103,7 @@ class ProjectStatsTests(unittest.TestCase):
         current = calculate_stats(self.root, generated_at=stored["generatedAt"])
 
         self.assertEqual(stored, current)
-        self.assertEqual(2, current["summary"]["artifactCount"])
+        self.assertEqual(3, current["summary"]["artifactCount"])
         self.assertEqual("excellent", current["policy"]["status"]["id"])
         self.assertEqual(
             {"ciclo-09", "ciclo-10", "trabajo", "personal"},
@@ -161,7 +161,7 @@ class ArtifactCreationTests(unittest.TestCase):
         catalog = json.loads((self.root / "data" / "catalog.json").read_text(encoding="utf-8"))
         self.assertTrue(any(item["id"] == result.artifact_id for item in catalog["artifacts"]))
         stats = json.loads((self.root / "data" / "stats.json").read_text(encoding="utf-8"))
-        self.assertEqual(3, stats["summary"]["artifactCount"])
+        self.assertEqual(4, stats["summary"]["artifactCount"])
         self.assertEqual([], validate_project(self.root).errors)
 
         with self.assertRaisesRegex(creator.CreationError, "ya está registrado"):

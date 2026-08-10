@@ -15,7 +15,7 @@ Actualmente están disponibles:
 - la estructura canónica `Área → Colección → Artefacto`;
 - un primer artefacto `page` independiente y publicado;
 - Presentation Runtime V1 con navegación, steps, transiciones, fullscreen, eventos y Reduced Motion;
-- control de regreso a la biblioteca y vista general accidental desactivada;
+- vista general accidental desactivada y presentaciones sin enlace directo al portal;
 - Reveal.js `6.0.1` fijado localmente como motor interno;
 - una primera presentación académica publicada y conectada al catálogo;
 - carga opcional de brands declarados por presentación;

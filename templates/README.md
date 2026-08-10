@@ -33,8 +33,7 @@ Al hacer una copia manual se debe:
 
 1. cambiar `presentationId`, títulos y contenido;
 2. adaptar `brandData` si corresponde;
-3. conservar o adaptar `homeHref` para que el botón de regreso apunte a la biblioteca;
-4. diseñar libremente `presentation.css`;
-5. añadir `presentation.js` solo si existe comportamiento particular;
-6. registrar la carpeta final en el catálogo;
-7. ejecutar `python tools\validate_project.py`.
+3. diseñar libremente `presentation.css`;
+4. añadir `presentation.js` solo si existe comportamiento particular;
+5. registrar la carpeta final en el catálogo;
+6. ejecutar `python tools\validate_project.py`.

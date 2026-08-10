@@ -89,48 +89,6 @@
     display: none;
   }
 
-  .pc-home-control {
-    position: absolute;
-    z-index: 35;
-    left: 48px;
-    bottom: 20px;
-    display: inline-flex;
-    min-height: 38px;
-    align-items: center;
-    padding: 0 14px;
-    gap: 8px;
-    border: 1px solid color-mix(in srgb, var(--pc-runtime-accent) 32%, transparent);
-    border-radius: 999px;
-    color: var(--pc-runtime-ink);
-    background: var(--pc-runtime-control);
-    font: 700 12px/1 system-ui, sans-serif;
-    letter-spacing: 0.035em;
-    text-decoration: none;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-  }
-
-  .pc-home-control > span:first-child {
-    color: var(--pc-runtime-accent);
-    font-size: 18px;
-    line-height: 1;
-    transition: transform 160ms ease;
-  }
-
-  .pc-home-control:hover {
-    border-color: var(--pc-runtime-accent);
-    color: var(--pc-runtime-accent);
-  }
-
-  .pc-home-control:hover > span:first-child {
-    transform: translateX(-2px);
-  }
-
-  .pc-home-control:focus-visible {
-    outline: 3px solid var(--pc-runtime-accent);
-    outline-offset: 4px;
-  }
-
   .pc-runtime-error {
     box-sizing: border-box;
     display: grid;

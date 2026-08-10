@@ -7,7 +7,6 @@
     "school": "Escuela Profesional de Ingeniería de Computación y Sistemas",
     "course": "Gestión de la Innovación"
   },
-  "homeHref": "../../../../",
   "aspectRatio": "16:9",
   "chromeDefault": "minimal",
   "transition": {

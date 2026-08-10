@@ -49,7 +49,7 @@ Abrir `Introducción a la Auditoría de Sistemas` y comprobar:
 - pasos internos que aparecen antes de cambiar de diapositiva;
 - contador y progreso;
 - botón o tecla `F` para pantalla completa y `Esc` para salir;
-- botón `← Biblioteca` para regresar al portal;
+- ausencia de enlaces directos hacia el portal dentro de la presentación;
 - ausencia de la cuadrícula de miniaturas al presionar `Esc` fuera de fullscreen;
 - recarga conservando el hash de la diapositiva;
 - lectura y controles en una ventana estrecha o móvil.

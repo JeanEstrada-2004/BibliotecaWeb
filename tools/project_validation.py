@@ -564,7 +564,6 @@ def _validate_presentation_config(
         "presentationId",
         "brand",
         "brandData",
-        "homeHref",
         "aspectRatio",
         "chromeDefault",
         "transition",
@@ -603,23 +602,6 @@ def _validate_presentation_config(
                 _add(issues, "error", "brand-data-key", f"{location}.brandData.{key}", "La clave debe usar camelCase ASCII.")
             if value is not None and (not isinstance(value, str) or len(value) > 160):
                 _add(issues, "error", "brand-data-value", f"{location}.brandData.{key}", "Debe ser null o texto de hasta 160 caracteres.")
-    home_href = config.get("homeHref", "../../../../")
-    home_location = f"{location}.homeHref"
-    if (
-        not isinstance(home_href, str)
-        or not home_href
-        or home_href.strip() != home_href
-        or len(home_href) > 256
-        or home_href.startswith(("/", "\\"))
-        or re.match(r"^[a-z][a-z\d+.-]*:", home_href, re.IGNORECASE)
-        or "?" in home_href
-        or "#" in home_href
-    ):
-        _add(issues, "error", "presentation-home-href", home_location, "Debe ser una ruta local relativa de hasta 256 caracteres.")
-    else:
-        home_target = (config_path.parent / home_href).resolve()
-        if not _inside(home_target, root) or not home_target.exists():
-            _add(issues, "error", "presentation-home-target", home_location, "La ruta de regreso debe resolver dentro del proyecto.")
     if config.get("aspectRatio") != "16:9":
         _add(issues, "error", "presentation-aspect", f"{location}.aspectRatio", "V1 requiere 16:9.")
     if config.get("chromeDefault") not in CHROME_LEVELS:

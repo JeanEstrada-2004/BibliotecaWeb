@@ -2,7 +2,6 @@
   "contractVersion": 1,
   "presentationId": "template-visual",
   "brand": null,
-  "homeHref": "../../../../",
   "aspectRatio": "16:9",
   "chromeDefault": "none",
   "transition": {
