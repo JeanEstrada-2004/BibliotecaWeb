@@ -30,7 +30,7 @@
           <div class="cover-layout">
             <header class="cover-copy">
               <p class="overline">Encuesta universitaria · USMP</p>
-              <h1 id="titulo-cargar-datos">Percepción sobre el uso de la Inteligencia Artificial</h1>
+              <h2 id="titulo-cargar-datos">Percepción sobre el uso de la Inteligencia Artificial</h2>
               <p class="lead">Carga el Excel de Google Forms para convertir sus respuestas en una presentación lista para exponer.</p>
               <p class="privacy-note"><strong>Privacidad:</strong> el archivo se procesa solo en este navegador.</p>
             </header>
@@ -53,6 +53,48 @@
                 <p class="file-error" id="fileError" role="alert"></p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="portada"
+          data-brand-chrome="full"
+          aria-labelledby="titulo-portada"
+        >
+          <div class="team-cover">
+            <header class="team-cover-copy">
+              <p class="overline">Encuesta digital · Actividad grupal (PA1)</p>
+              <h1 id="titulo-portada">Percepción sobre el uso de la Inteligencia Artificial</h1>
+              <p class="cover-summary">Encuesta aplicada a estudiantes de la Universidad de San Martín de Porres sobre los beneficios, riesgos y criterios éticos del uso académico de la IA.</p>
+              <div class="course-block">
+                <p class="course-line">Gestión de la Innovación</p>
+                <p class="faculty-line">Facultad de Ingeniería y Arquitectura · USMP</p>
+              </div>
+            </header>
+
+            <aside class="team-roster" aria-labelledby="titulo-equipo">
+              <p class="roster-overline">Equipo de trabajo</p>
+              <h2 id="titulo-equipo">Integrantes</h2>
+              <ul class="team-list">
+                <li>
+                  <span>01</span>
+                  <div><strong>NICOL BRILLYT PAITAN YUJRA</strong><small>Ingeniería Industrial</small></div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div><strong>NURIA THALIA CCAHUANA QUISPE</strong><small>Ingeniería Industrial</small></div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div><strong>JEAN CARLOS ESTRADA BARRIENTOS</strong><small>Ingeniería en Computación y Sistemas</small></div>
+                </li>
+                <li>
+                  <span>04</span>
+                  <div><strong>IRWIN EDISON VILCA VARGAS</strong><small>Ingeniería en Computación y Sistemas</small></div>
+                </li>
+              </ul>
+            </aside>
           </div>
         </section>
 
@@ -111,18 +153,22 @@
               <p class="overline">02 / Perfil</p>
               <h2 id="titulo-perfil">La composición de la muestra da contexto a cada resultado.</h2>
             </header>
-            <div class="chart-grid chart-grid-three">
-              <figure class="chart-card">
+            <div class="profile-layout">
+              <figure class="chart-card profile-age-card">
                 <figcaption>Rango de edad</figcaption>
                 <div class="chart-frame"><canvas id="chartEdad"></canvas></div>
               </figure>
-              <figure class="chart-card">
+              <figure class="chart-card profile-cycle-card">
                 <figcaption>Ciclo académico</figcaption>
                 <div class="chart-frame"><canvas id="chartCiclo"></canvas></div>
               </figure>
-              <figure class="chart-card chart-card-wide-labels">
+              <figure class="chart-card chart-card-wide-labels profile-school-card">
                 <figcaption>Escuela académica</figcaption>
                 <div class="chart-frame"><canvas id="chartEscuela"></canvas></div>
+              </figure>
+              <figure class="chart-card profile-occupation-card">
+                <figcaption>Ocupación principal</figcaption>
+                <div class="chart-frame"><canvas id="chartOcupacion"></canvas></div>
               </figure>
             </div>
           </div>
@@ -230,6 +276,130 @@
                   <li>Las respuestas abiertas aparecerán aquí.</li>
                 </ul>
               </aside>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="energia-agua"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-energia-agua"
+        >
+          <header class="slide-heading compact-heading environmental-heading">
+            <p class="overline">06 / Costos ambientales</p>
+            <h2 id="titulo-energia-agua">La infraestructura de IA también consume energía y agua.</h2>
+          </header>
+          <div class="environmental-layout">
+            <article class="energy-field">
+              <span class="environmental-label">Electricidad</span>
+              <div class="environmental-stat">
+                <strong>945</strong>
+                <span>TWh/año</span>
+              </div>
+              <p class="environmental-explainer">
+                Demanda eléctrica mundial proyectada para centros de datos en 2030; la IA será el principal impulsor del crecimiento.
+              </p>
+              <div class="growth-note">
+                <strong>+50 %</strong>
+                <p>creció en 2025 el consumo eléctrico de los centros enfocados específicamente en IA.</p>
+              </div>
+            </article>
+
+            <article class="water-field">
+              <span class="environmental-label">Agua para enfriamiento</span>
+              <div class="environmental-stat water-stat">
+                <strong>≈700 000</strong>
+                <span>litros</span>
+              </div>
+              <p class="environmental-explainer">
+                Estimación del agua dulce evaporada directamente al entrenar GPT-3 en centros de datos de Microsoft en Estados Unidos.
+              </p>
+              <p class="resource-caveat">La huella cambia según la ubicación, el clima y el sistema de enfriamiento.</p>
+            </article>
+          </div>
+          <footer class="source-note" aria-label="Fuentes de la diapositiva">
+            <span>[Fuentes]</span> IEA (2025, 2026) · Li et al. (2023), citado por ELI (2025)
+          </footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="carbono-residuos"
+          data-brand-chrome="minimal"
+          aria-labelledby="titulo-carbono-residuos"
+        >
+          <header class="slide-heading compact-heading environmental-heading">
+            <p class="overline">07 / Ciclo de vida</p>
+            <h2 id="titulo-carbono-residuos">Innovar responsablemente exige mirar más allá del resultado.</h2>
+          </header>
+          <div class="lifecycle-evidence">
+            <article class="lifecycle-metric">
+              <span class="environmental-label">Huella de carbono</span>
+              <div class="lifecycle-stat">
+                <strong>≈500</strong>
+                <span>t CO₂</span>
+              </div>
+              <p>Estimación atribuida al entrenamiento de GPT-3; el resultado depende de la energía utilizada y la metodología de cálculo.</p>
+            </article>
+            <article class="lifecycle-metric waste-metric">
+              <span class="environmental-label">Residuos electrónicos</span>
+              <div class="lifecycle-stat lifecycle-stat-wide">
+                <strong>2,5 millones</strong>
+                <span>t/año</span>
+              </div>
+              <p>Máximo proyectado para 2030 bajo un escenario de adopción agresiva de modelos generativos.</p>
+            </article>
+          </div>
+          <div class="innovation-close">
+            <div>
+              <span class="context-label">Conexión con la encuesta</span>
+              <p id="environmentFrequency">La huella de cada consulta varía; a escala, la frecuencia y el tipo de uso se vuelven relevantes.</p>
+            </div>
+            <p class="innovation-thesis">Innovar no es usar más IA, sino emplearla donde su valor justifique los recursos.</p>
+          </div>
+          <footer class="source-note" aria-label="Fuentes de la diapositiva">
+            <span>[Fuentes]</span> Climate Impact Partners (2025) · IEEE Spectrum (2024)
+          </footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="conclusiones"
+          data-brand-chrome="minimal"
+          class="conclusions-slide"
+          aria-labelledby="titulo-conclusiones"
+        >
+          <div class="empty-state">
+            <span>Datos pendientes</span>
+            <p>Regresa a la primera diapositiva y carga el Excel para comenzar.</p>
+          </div>
+          <div class="result-content">
+            <header class="slide-heading compact-heading">
+              <p class="overline">08 / Conclusiones</p>
+              <h2 id="titulo-conclusiones">El uso de IA ya es cotidiano: falta que sea consciente.</h2>
+            </header>
+            <div class="conclusions-grid">
+              <article class="conclusion-item">
+                <span>01</span>
+                <h3>Uso extendido, criterio necesario</h3>
+                <p id="conclusionUsage">Los datos resumirán el principal uso y la confianza declarada.</p>
+              </article>
+              <article class="conclusion-item">
+                <span>02</span>
+                <h3>La ética requiere reglas claras</h3>
+                <p id="conclusionEthics">La distribución de respuestas mostrará la postura predominante.</p>
+              </article>
+              <article class="conclusion-item">
+                <span>03</span>
+                <h3>Lo humano sigue siendo insustituible</h3>
+                <p id="conclusionHuman">La encuesta identificará la capacidad humana más valorada.</p>
+              </article>
+              <article class="conclusion-item">
+                <span>04</span>
+                <h3>El uso masivo tiene un costo físico</h3>
+                <p>Cada consulta se apoya en electricidad, agua y hardware; la responsabilidad también incluye su huella ambiental.</p>
+              </article>
             </div>
           </div>
         </section>

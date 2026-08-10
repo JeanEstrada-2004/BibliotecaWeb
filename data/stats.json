@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scope": "public-static-files",
-  "generatedAt": "2026-08-10T01:20:56Z",
-  "sourceFingerprint": "7c5e6c6d330e61693b324f700ea6bf6a3c4213fdeda18a4af6138157576eaedd",
+  "generatedAt": "2026-08-10T21:17:58Z",
+  "sourceFingerprint": "999089d6ca063cc563a9af1a2c6ef4aafccb7a6fcc8a9314118c25c632a791a9",
   "policy": {
     "kind": "internal-maintenance",
     "label": "Política interna de BibliotecaWeb",
     "budgetBytes": 209715200,
-    "budgetPercentage": 0.34,
+    "budgetPercentage": 0.35,
     "status": {
       "id": "excellent",
       "label": "Excelente",
@@ -16,9 +16,9 @@
     }
   },
   "summary": {
-    "totalBytes": 720588,
-    "artifactBytes": 285568,
-    "sharedBytes": 435020,
+    "totalBytes": 741876,
+    "artifactBytes": 306758,
+    "sharedBytes": 435118,
     "artifactCount": 3,
     "publishedArtifactCount": 3,
     "fileCount": 38,
@@ -29,14 +29,14 @@
       {
         "id": "ciclo-09",
         "label": "9.º ciclo",
-        "bytes": 265036,
-        "percentage": 92.81
+        "bytes": 286226,
+        "percentage": 93.31
       },
       {
         "id": "personal",
         "label": "Personal / Extras",
         "bytes": 20532,
-        "percentage": 7.19
+        "percentage": 6.69
       },
       {
         "id": "ciclo-10",
@@ -55,14 +55,14 @@
       {
         "id": "presentation",
         "label": "Presentación",
-        "bytes": 265036,
-        "percentage": 92.81
+        "bytes": 286226,
+        "percentage": 93.31
       },
       {
         "id": "page",
         "label": "Página",
         "bytes": 20532,
-        "percentage": 7.19
+        "percentage": 6.69
       },
       {
         "id": "mockup",
@@ -76,43 +76,43 @@
         "id": "vendor",
         "label": "Dependencias versionadas",
         "bytes": 311890,
-        "percentage": 43.28
+        "percentage": 42.04
       },
       {
         "id": "artifacts",
         "label": "Artefactos",
-        "bytes": 285568,
-        "percentage": 39.63
+        "bytes": 306758,
+        "percentage": 41.35
       },
       {
         "id": "portal",
         "label": "Portal",
         "bytes": 60049,
-        "percentage": 8.33
+        "percentage": 8.09
       },
       {
         "id": "status-page",
         "label": "Página de estado",
         "bytes": 27604,
-        "percentage": 3.83
+        "percentage": 3.72
       },
       {
         "id": "runtime",
         "label": "Presentation Runtime",
         "bytes": 24459,
-        "percentage": 3.39
+        "percentage": 3.3
       },
       {
         "id": "data",
         "label": "Datos",
-        "bytes": 5730,
-        "percentage": 0.8
+        "bytes": 5828,
+        "percentage": 0.79
       },
       {
         "id": "brands",
         "label": "Brands",
         "bytes": 5288,
-        "percentage": 0.73
+        "percentage": 0.71
       }
     ]
   },
@@ -126,9 +126,9 @@
       "typeLabel": "Presentación",
       "status": "published",
       "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial",
-      "bytes": 242878,
+      "bytes": 264068,
       "fileCount": 6,
-      "percentageOfArtifacts": 85.05
+      "percentageOfArtifacts": 86.08
     },
     {
       "id": "ciclo-09-introduccion-auditoria-sistemas",
@@ -141,7 +141,7 @@
       "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas",
       "bytes": 22158,
       "fileCount": 4,
-      "percentageOfArtifacts": 7.76
+      "percentageOfArtifacts": 7.22
     },
     {
       "id": "personal-anatomia-biblioteca-web",
@@ -154,7 +154,7 @@
       "path": "artefactos/personal/general/anatomia-biblioteca-web",
       "bytes": 20532,
       "fileCount": 3,
-      "percentageOfArtifacts": 7.19
+      "percentageOfArtifacts": 6.69
     }
   ],
   "largestFiles": [
@@ -184,14 +184,14 @@
       "sha256": "4b396bb69d83efe502d9c2ef616eb7852dbae4667956dad86a61a0ed94210619"
     },
     {
+      "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial/presentation.js",
+      "bytes": 28590,
+      "sha256": "e7010011804d30ee7d177e55041997c9f888ac1311faab36c3b9bc370b5f1e07"
+    },
+    {
       "path": "app/portal.css",
       "bytes": 24592,
       "sha256": "81a2b0d779b19115c957cc9ef92fcd88aa105ee6628d07f1e3ffea27d887854a"
-    },
-    {
-      "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial/presentation.js",
-      "bytes": 22358,
-      "sha256": "07b5cd148199ff1eaba042def810d512516e6f9446b6bfdeb159f809fb2846b2"
     },
     {
       "path": "runtime/presentation/v1/runtime.js",

@@ -1,7 +1,34 @@
 (() => {
   "use strict";
 
-  const COLORS = ["#7a1e3b", "#b8935f", "#4f1126", "#c98ba3", "#4f7358", "#3e5c76", "#8c6e4a"];
+  const COLORS = ["#7a1e3b", "#b8935f", "#4f1126", "#c98ba3", "#4f7358", "#3e5c76", "#8c6e4a", "#c46b4f", "#667a9b", "#92705c"];
+  const TOOL_ALIASES = new Map([
+    ["chatgpt", "ChatGPT"],
+    ["chatgpt4", "ChatGPT"],
+    ["chatgpt4o", "ChatGPT"],
+    ["gpt", "ChatGPT"],
+    ["gpt4", "ChatGPT"],
+    ["openai", "ChatGPT"],
+    ["gemini", "Gemini"],
+    ["googlegemini", "Gemini"],
+    ["bard", "Gemini"],
+    ["googlebard", "Gemini"],
+    ["claude", "Claude"],
+    ["claudeai", "Claude"],
+    ["anthropic", "Claude"],
+    ["deepseek", "DeepSeek"],
+    ["copilot", "Copilot"],
+    ["microsoftcopilot", "Copilot"],
+    ["githubcopilot", "Copilot"],
+    ["bingcopilot", "Copilot"],
+    ["bingai", "Copilot"],
+    ["grok", "Grok"],
+    ["xai", "Grok"],
+    ["dalle", "DALL·E"],
+    ["dola", "DALL·E"],
+    ["perplexity", "Perplexity"],
+    ["perplexityai", "Perplexity"]
+  ]);
   const FIELD_DEFS = [
     { key: "timestamp", index: 0, keywords: ["marca temporal"] },
     { key: "edad", index: 1, keywords: ["rango de edad"] },
@@ -253,6 +280,53 @@
     return counts;
   }
 
+  function toolKey(value) {
+    return normalizeText(value)
+      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9]+/g, "");
+  }
+
+  function countTools(rows, column) {
+    const knownCounts = {};
+    const unknownCounts = new Map();
+    if (!column) return knownCounts;
+
+    rows.forEach((row) => {
+      const value = String(row[column] ?? "").trim();
+      if (!value) return;
+
+      value
+        .split(/[,;\n/]+/)
+        .map((item) => item.replace(/\s+/g, " ").trim())
+        .filter(Boolean)
+        .forEach((item) => {
+          const normalizedKey = toolKey(item);
+          const canonicalName = TOOL_ALIASES.get(normalizedKey);
+          if (canonicalName) {
+            knownCounts[canonicalName] = (knownCounts[canonicalName] || 0) + 1;
+            return;
+          }
+
+          const normalizedLabel = normalizeText(item).replace(/\s+/g, " ");
+          const current = unknownCounts.get(normalizedLabel) || { label: item, count: 0 };
+          current.count += 1;
+          unknownCounts.set(normalizedLabel, current);
+        });
+    });
+
+    let otherCount = 0;
+    unknownCounts.forEach(({ label, count }) => {
+      if (count <= 2) {
+        otherCount += count;
+      } else {
+        knownCounts[label] = (knownCounts[label] || 0) + count;
+      }
+    });
+
+    if (otherCount) knownCounts.Otro = (knownCounts.Otro || 0) + otherCount;
+    return knownCounts;
+  }
+
   function averageNumeric(rows, column) {
     if (!column) return null;
     const values = rows
@@ -269,6 +343,34 @@
     return Object.entries(counts)
       .sort((first, second) => second[1] - first[1])
       .slice(0, limit);
+  }
+
+  function sortedEntries(counts) {
+    return Object.entries(counts).sort((first, second) => second[1] - first[1]);
+  }
+
+  function entriesTotal(entries) {
+    return entries.reduce((total, [, count]) => total + Number(count || 0), 0);
+  }
+
+  function percentageLabel(count, total) {
+    if (!total) return "0 %";
+    return `${Math.round((Number(count || 0) / total) * 100)} %`;
+  }
+
+  function topEntriesWithOther(counts, limit = 8) {
+    const baseOtherCount = counts.Otro || 0;
+    const sorted = sortedEntries(counts).filter(([label]) => label !== "Otro");
+    if (sorted.length + (baseOtherCount ? 1 : 0) <= limit) {
+      return [...sorted, ...(baseOtherCount ? [["Otro", baseOtherCount]] : [])]
+        .sort((first, second) => second[1] - first[1]);
+    }
+
+    const visible = sorted.slice(0, limit - 1);
+    const groupedCount = sorted
+      .slice(limit - 1)
+      .reduce((total, [, count]) => total + count, baseOtherCount);
+    return [...visible, ["Otro", groupedCount]].sort((first, second) => second[1] - first[1]);
   }
 
   function setText(id, value) {
@@ -341,16 +443,19 @@
     charts.set(id, chart);
   }
 
-  function createDoughnutChart(id, entries) {
+  function createDoughnutChart(id, entries, legendPosition = "bottom") {
     const canvas = document.getElementById(id);
     if (!canvas || !entries.length) return;
+
+    const values = entries.map(([, value]) => Number(value) || 0);
+    const total = values.reduce((sum, value) => sum + value, 0);
 
     const chart = new window.Chart(canvas, {
       type: "doughnut",
       data: {
         labels: entries.map(([label]) => label),
         datasets: [{
-          data: entries.map(([, value]) => value),
+          data: values,
           backgroundColor: entries.map((_, index) => COLORS[index % COLORS.length]),
           borderColor: "#fffdf8",
           borderWidth: 3,
@@ -364,20 +469,49 @@
         cutout: "58%",
         plugins: {
           legend: {
-            position: "bottom",
+            position: legendPosition,
+            align: "start",
             labels: {
-              boxWidth: 12,
-              boxHeight: 12,
-              padding: 13,
+              usePointStyle: true,
+              pointStyle: "rectRounded",
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 9,
               color: "#6b5f5a",
-              font: { size: 13, weight: "600" },
+              font: { size: 12, weight: "600" },
               generateLabels(chart) {
-                const labels = window.Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                return labels.map((label) => ({ ...label, text: truncate(label.text, 34) }));
+                const dataset = chart.data.datasets[0];
+                const colors = Array.isArray(dataset.backgroundColor)
+                  ? dataset.backgroundColor
+                  : chart.data.labels.map(() => dataset.backgroundColor);
+
+                return chart.data.labels.map((label, index) => {
+                  const value = Number(dataset.data[index]) || 0;
+                  const percentage = total ? ((value / total) * 100).toFixed(1).replace(".0", "") : "0";
+                  return {
+                    text: `${truncate(label, 32)} · ${value} (${percentage}%)`,
+                    fillStyle: colors[index],
+                    strokeStyle: dataset.borderColor,
+                    lineWidth: dataset.borderWidth,
+                    hidden: !chart.getDataVisibility(index),
+                    index,
+                    datasetIndex: 0,
+                    pointStyle: "rectRounded"
+                  };
+                });
               }
             }
           },
-          tooltip: { callbacks: { title: tooltipTitle } }
+          tooltip: {
+            callbacks: {
+              title: tooltipTitle,
+              label(context) {
+                const value = Number(context.raw) || 0;
+                const percentage = total ? ((value / total) * 100).toFixed(1).replace(".0", "") : "0";
+                return `${value} respuestas (${percentage}%)`;
+              }
+            }
+          }
         }
       }
     });
@@ -429,13 +563,13 @@
     const ageEntries = topEntries(countSingle(rows, columns.edad), 7);
     const cycleEntries = topEntries(countSingle(rows, columns.ciclo), 7);
     const schoolEntries = topEntries(countSingle(rows, columns.escuela), 8);
-    const occupationEntries = topEntries(countSingle(rows, columns.ocupacion), 5);
-    const toolEntries = topEntries(countMultiple(rows, columns.herramientas), 8);
-    const frequencyEntries = topEntries(countSingle(rows, columns.frecuencia), 6);
+    const occupationEntries = sortedEntries(countSingle(rows, columns.ocupacion));
+    const toolEntries = topEntriesWithOther(countTools(rows, columns.herramientas), 8);
+    const frequencyEntries = sortedEntries(countSingle(rows, columns.frecuencia));
     const purposeEntries = topEntries(countMultiple(rows, columns.paraque), 7);
-    const benefitEntries = topEntries(countSingle(rows, columns.beneficio), 6);
-    const riskEntries = topEntries(countSingle(rows, columns.riesgo), 6);
-    const ethicsEntries = topEntries(countSingle(rows, columns.etico), 6);
+    const benefitEntries = sortedEntries(countSingle(rows, columns.beneficio));
+    const riskEntries = sortedEntries(countSingle(rows, columns.riesgo));
+    const ethicsEntries = sortedEntries(countSingle(rows, columns.etico));
     const humanEntries = topEntries(countSingle(rows, columns.noReemplaza), 7);
     const averageLearning = averageNumeric(rows, columns.likertAprend);
     const averageReliability = averageNumeric(rows, columns.confiable);
@@ -455,13 +589,24 @@
     const leadingAge = ageEntries[0]?.[0];
     const leadingCycle = cycleEntries[0]?.[0];
     const leadingOccupation = occupationEntries[0]?.[0];
+    const leadingTool = toolEntries.find(([label]) => label !== "Otro") || toolEntries[0];
+    const leadingPurpose = purposeEntries[0];
+    const leadingEthics = ethicsEntries[0];
+    const leadingHuman = humanEntries[0];
     const profileParts = [leadingAge, leadingCycle].filter(Boolean).map((value) => truncate(value, 28));
     if (profileParts.length) {
       setText("titulo-perfil", `La muestra se concentra en ${profileParts.join(" y ")}.`);
     }
 
-    if (toolEntries[0]) {
-      setText("titulo-habitos", `${truncate(toolEntries[0][0], 38)} encabeza las herramientas declaradas.`);
+    if (leadingTool) {
+      setText("titulo-habitos", `${truncate(leadingTool[0], 38)} encabeza las herramientas declaradas.`);
+    }
+
+    if (frequencyEntries[0]) {
+      setText(
+        "environmentFrequency",
+        `En la encuesta, “${truncate(frequencyEntries[0][0], 42)}” fue la frecuencia más reportada. El impacto debe evaluarse por escala, tarea y modelo.`
+      );
     }
 
     if (benefitEntries[0] && riskEntries[0]) {
@@ -472,9 +617,35 @@
       setText("titulo-criterio-etico", `La postura ética más frecuente fue “${truncate(ethicsEntries[0][0], 46)}”.`);
     }
 
+    if (leadingPurpose) {
+      const reliabilityConclusion = averageReliability === null
+        ? "La confiabilidad debe revisarse antes de adoptar cada respuesta."
+        : `La confiabilidad promedio fue ${reliabilityLabel}, por lo que conviene verificar cada resultado.`;
+      setText(
+        "conclusionUsage",
+        `“${truncate(leadingPurpose[0], 54)}” fue la actividad más mencionada (${leadingPurpose[1]} menciones). ${reliabilityConclusion}`
+      );
+    }
+
+    if (leadingEthics) {
+      const ethicsTotal = entriesTotal(ethicsEntries);
+      setText(
+        "conclusionEthics",
+        `La postura principal fue “${truncate(leadingEthics[0], 42)}” (${leadingEthics[1]} de ${ethicsTotal}; ${percentageLabel(leadingEthics[1], ethicsTotal)}). El resultado orienta la necesidad de criterios académicos explícitos.`
+      );
+    }
+
+    if (leadingHuman) {
+      const humanTotal = entriesTotal(humanEntries);
+      setText(
+        "conclusionHuman",
+        `“${truncate(leadingHuman[0], 52)}” fue la capacidad más señalada (${leadingHuman[1]} de ${humanTotal}; ${percentageLabel(leadingHuman[1], humanTotal)}). Esto delimita a la IA como herramienta de apoyo.`
+      );
+    }
+
     const insightParts = [];
     if (leadingOccupation) insightParts.push(`La ocupación más común es ${truncate(leadingOccupation, 42)}`);
-    if (toolEntries[0]) insightParts.push(`${truncate(toolEntries[0][0], 42)} lidera entre las herramientas mencionadas`);
+    if (leadingTool) insightParts.push(`${truncate(leadingTool[0], 42)} lidera entre las herramientas mencionadas`);
     setText(
       "panoramaInsight",
       insightParts.length ? `${insightParts.join("; ")}.` : "La muestra permite comparar perfil, hábitos, valor percibido y criterio ético."
@@ -486,8 +657,9 @@
     createBarChart("chartEdad", ageEntries, false);
     createBarChart("chartCiclo", cycleEntries, false);
     createBarChart("chartEscuela", schoolEntries, true);
+    createDoughnutChart("chartOcupacion", occupationEntries, "right");
     createBarChart("chartHerramientas", toolEntries, true);
-    createDoughnutChart("chartFrecuencia", frequencyEntries);
+    createDoughnutChart("chartFrecuencia", frequencyEntries, "right");
     createBarChart("chartParaQue", purposeEntries, true);
     createDoughnutChart("chartBeneficio", benefitEntries);
     createDoughnutChart("chartRiesgo", riskEntries);
@@ -523,7 +695,7 @@
 
       renderPresentation(rows, headers);
       status.textContent = `✓ ${file.name} · ${rows.length} respuestas cargadas`;
-      moveTo("panorama");
+      moveTo("portada");
     } catch (caughtError) {
       console.error(caughtError);
       status.textContent = "No se cargaron datos.";

@@ -145,14 +145,16 @@
       "areaId": "ciclo-09",
       "collectionId": "gestion-innovacion",
       "type": "presentation",
-      "summary": "Presentación interactiva que procesa localmente el Excel de la encuesta y convierte sus respuestas en hallazgos visuales.",
+      "summary": "Presentación interactiva que procesa localmente el Excel de la encuesta, convierte sus respuestas en hallazgos visuales y contextualiza el impacto ambiental de la IA.",
       "status": "published",
       "tags": [
         "inteligencia artificial",
         "encuesta",
-        "ética"
+        "ética",
+        "sostenibilidad"
       ],
-      "publishedAt": "2026-08-09"
+      "publishedAt": "2026-08-09",
+      "updatedAt": "2026-08-10"
     }
   ]
 }
