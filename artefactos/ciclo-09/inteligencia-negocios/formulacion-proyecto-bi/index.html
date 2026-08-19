@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Propuesta de Business Intelligence para consolidar y analizar los costos y gastos por proyecto de J&amp;Y Ingenieros Consultores S.A.C."
+    >
+    <title>Formulación de un proyecto de BI</title>
+    <link rel="stylesheet" href="../../../../runtime/presentation/v1/runtime.css">
+    <link rel="stylesheet" href="presentation.css">
+  </head>
+  <body>
+    <main
+      class="reveal"
+      data-presentation-root
+      data-presentation-config="presentation.config.json"
+      aria-label="Formulación de un proyecto de BI"
+    >
+      <div class="slides">
+        <section
+          data-slide
+          data-slide-id="portada"
+          data-brand-chrome="full"
+          class="dark-slide cover-slide"
+          aria-labelledby="titulo-portada"
+        >
+          <div class="cover-copy">
+            <p class="overline">Actividad práctica · Semana 3</p>
+            <h1 id="titulo-portada">Formulación de un proyecto de BI</h1>
+            <p class="subtitle">Integración y análisis de los costos y gastos por proyecto de J&amp;Y Ingenieros Consultores S.A.C.</p>
+          </div>
+          <div class="cover-details">
+            <p><span>Curso</span> Inteligencia de Negocios</p>
+            <p><span>Estudiantes</span> Jean Carlos Estrada Barrientos · Jorge Luis Quispe Mendivil</p>
+            <p><span>Docente</span> Mg. Ing. Lennon Poul Rojas Sanz</p>
+            <p><span>Lugar y año</span> Arequipa · Perú · 2026</p>
+          </div>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="situacion-actual"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-situacion"
+        >
+          <header class="section-heading">
+            <p class="overline">01 / Situación actual</p>
+            <h2 id="titulo-situacion">La gestión de costos reúne información de varias actividades y formatos.</h2>
+          </header>
+          <div class="context-layout">
+            <div class="context-copy">
+              <p>J&amp;Y Ingenieros Consultores S.A.C. es una empresa dedicada a servicios de ingeniería, consultoría e integración tecnológica, cuya operación se organiza principalmente mediante proyectos.</p>
+              <p>Dentro de sus actividades administrativas, la gestión de gastos y costos reúne información proveniente de rendiciones, compras, materiales, personal y otros conceptos asociados a cada proyecto.</p>
+              <p>Actualmente, parte de esta información está distribuida en archivos Excel, documentos y registros administrativos que deben consolidarse antes de consultar los costos de los proyectos.</p>
+            </div>
+            <aside class="context-purpose">
+              <span>Propuesta</span>
+              <p>Integrar y analizar esos datos mediante un pequeño proyecto de Business Intelligence para facilitar la consulta gerencial y apoyar la toma de decisiones.</p>
+            </aside>
+          </div>
+          <footer class="slide-footer">USMP · Inteligencia de Negocios</footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="decision-mejorar"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-decision"
+        >
+          <header class="question-heading">
+            <p class="overline">02 / Pregunta 1</p>
+            <h2 id="titulo-decision">¿Qué decisión quieren mejorar?</h2>
+          </header>
+          <div class="answer-layout answer-decision">
+            <p class="answer-lead">Mejorar la decisión sobre qué proyectos, rubros de costo o gastos requieren mayor atención de la Gerencia.</p>
+            <div class="decision-axis">
+              <article>
+                <strong>01</strong>
+                <h3>Cuánto se ha gastado</h3>
+                <p>Conocer el costo acumulado de cada proyecto.</p>
+              </article>
+              <article>
+                <strong>02</strong>
+                <h3>Dónde se concentra</h3>
+                <p>Identificar las categorías y rubros con mayor costo.</p>
+              </article>
+              <article>
+                <strong>03</strong>
+                <h3>Qué sigue pendiente</h3>
+                <p>Reconocer montos, pagos o reembolsos aún por atender.</p>
+              </article>
+            </div>
+          </div>
+          <footer class="slide-footer">USMP · Inteligencia de Negocios</footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="fuentes-datos"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-fuentes"
+        >
+          <header class="question-heading compact-heading">
+            <p class="overline">03 / Pregunta 2</p>
+            <h2 id="titulo-fuentes">¿Qué fuentes de datos usarían?</h2>
+          </header>
+          <p class="answer-lead narrow-lead">Se integrarían los registros administrativos que describen el gasto desde su origen hasta su pago.</p>
+          <ul class="source-list">
+            <li><strong>01</strong><span>Archivos Excel de rendiciones y consolidación contable</span></li>
+            <li><strong>02</strong><span>Comprobantes y evidencias de gasto</span></li>
+            <li><strong>03</strong><span>Órdenes de compra</span></li>
+            <li><strong>04</strong><span>Registros de materiales y almacén</span></li>
+            <li><strong>05</strong><span>Planilla y recibos por honorarios</span></li>
+            <li><strong>06</strong><span>Datos de reembolsos y pagos</span></li>
+          </ul>
+          <footer class="slide-footer">USMP · Inteligencia de Negocios</footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="analisis-data-warehouse"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-data-warehouse"
+        >
+          <header class="question-heading compact-heading">
+            <p class="overline">04 / Pregunta 3</p>
+            <h2 id="titulo-data-warehouse">¿Qué analizarían en el Data Warehouse?</h2>
+          </header>
+          <p class="answer-lead">Los costos y gastos históricos de los proyectos, integrando las distintas fuentes para obtener una visión consolidada y comparable.</p>
+          <div class="analysis-dimensions" aria-label="Dimensiones de análisis del Data Warehouse">
+            <span>Proyecto</span>
+            <span>Período</span>
+            <span>Categoría</span>
+            <span>Rubro</span>
+            <span>Responsable</span>
+            <span>Estado de pago</span>
+          </div>
+          <p class="takeaway">Estas dimensiones permitirían observar el mismo gasto desde diferentes perspectivas sin volver a consolidar los archivos manualmente.</p>
+          <footer class="slide-footer">USMP · Inteligencia de Negocios</footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="contenido-dashboard"
+          data-brand-chrome="none"
+          aria-labelledby="titulo-dashboard"
+        >
+          <header class="question-heading compact-heading">
+            <p class="overline">05 / Pregunta 4</p>
+            <h2 id="titulo-dashboard">¿Qué mostrarían en el dashboard?</h2>
+          </header>
+          <p class="answer-lead narrow-lead">El dashboard reuniría los indicadores necesarios para comparar proyectos y detectar gastos que requieren atención.</p>
+          <ol class="dashboard-list">
+            <li><strong>01</strong><span>Costo total por proyecto</span></li>
+            <li><strong>02</strong><span>Gastos por categoría y rubro</span></li>
+            <li><strong>03</strong><span>Evolución de gastos por período</span></li>
+            <li><strong>04</strong><span>Montos pagados frente a pendientes</span></li>
+            <li><strong>05</strong><span>Reembolsos pendientes</span></li>
+            <li><strong>06</strong><span>Comparación de costos entre proyectos</span></li>
+          </ol>
+          <footer class="slide-footer">USMP · Inteligencia de Negocios</footer>
+        </section>
+
+        <section
+          data-slide
+          data-slide-id="herramienta-bi"
+          data-brand-chrome="full"
+          class="dark-slide tool-slide"
+          aria-labelledby="titulo-herramienta"
+        >
+          <header class="question-heading compact-heading">
+            <p class="overline">06 / Pregunta 5</p>
+            <h2 id="titulo-herramienta">¿Qué herramienta de BI elegirían?</h2>
+          </header>
+          <div class="tool-layout">
+            <div class="tool-name">
+              <span>Elección</span>
+              <strong>Microsoft Power BI</strong>
+            </div>
+            <div class="tool-answer">
+              <p>Se elegiría por su integración con Excel, la facilidad para modelar y visualizar datos, y su capacidad para crear dashboards interactivos orientados a la toma de decisiones gerenciales.</p>
+              <p class="closing-thesis">La propuesta convierte registros dispersos en una visión consolidada, comparable y útil para actuar.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="../../../../runtime/presentation/v1/bootstrap.js"></script>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scope": "public-static-files",
-  "generatedAt": "2026-08-10T21:17:58Z",
-  "sourceFingerprint": "999089d6ca063cc563a9af1a2c6ef4aafccb7a6fcc8a9314118c25c632a791a9",
+  "generatedAt": "2026-08-19T21:16:24Z",
+  "sourceFingerprint": "f1c502a6b69b2529b10c8807f2bce92d8c02a7fc983088a618cd885179357d1e",
   "policy": {
     "kind": "internal-maintenance",
     "label": "Política interna de BibliotecaWeb",
     "budgetBytes": 209715200,
-    "budgetPercentage": 0.35,
+    "budgetPercentage": 0.36,
     "status": {
       "id": "excellent",
       "label": "Excelente",
@@ -16,12 +16,12 @@
     }
   },
   "summary": {
-    "totalBytes": 741876,
-    "artifactBytes": 306758,
-    "sharedBytes": 435118,
-    "artifactCount": 3,
-    "publishedArtifactCount": 3,
-    "fileCount": 38,
+    "totalBytes": 759241,
+    "artifactBytes": 323494,
+    "sharedBytes": 435747,
+    "artifactCount": 4,
+    "publishedArtifactCount": 4,
+    "fileCount": 41,
     "warningCount": 0
   },
   "breakdown": {
@@ -29,14 +29,14 @@
       {
         "id": "ciclo-09",
         "label": "9.º ciclo",
-        "bytes": 286226,
-        "percentage": 93.31
+        "bytes": 302962,
+        "percentage": 93.65
       },
       {
         "id": "personal",
         "label": "Personal / Extras",
         "bytes": 20532,
-        "percentage": 6.69
+        "percentage": 6.35
       },
       {
         "id": "ciclo-10",
@@ -55,14 +55,14 @@
       {
         "id": "presentation",
         "label": "Presentación",
-        "bytes": 286226,
-        "percentage": 93.31
+        "bytes": 302962,
+        "percentage": 93.65
       },
       {
         "id": "page",
         "label": "Página",
         "bytes": 20532,
-        "percentage": 6.69
+        "percentage": 6.35
       },
       {
         "id": "mockup",
@@ -73,46 +73,46 @@
     ],
     "components": [
       {
+        "id": "artifacts",
+        "label": "Artefactos",
+        "bytes": 323494,
+        "percentage": 42.61
+      },
+      {
         "id": "vendor",
         "label": "Dependencias versionadas",
         "bytes": 311890,
-        "percentage": 42.04
-      },
-      {
-        "id": "artifacts",
-        "label": "Artefactos",
-        "bytes": 306758,
-        "percentage": 41.35
+        "percentage": 41.08
       },
       {
         "id": "portal",
         "label": "Portal",
         "bytes": 60049,
-        "percentage": 8.09
+        "percentage": 7.91
       },
       {
         "id": "status-page",
         "label": "Página de estado",
         "bytes": 27604,
-        "percentage": 3.72
+        "percentage": 3.64
       },
       {
         "id": "runtime",
         "label": "Presentation Runtime",
         "bytes": 24459,
-        "percentage": 3.3
+        "percentage": 3.22
       },
       {
         "id": "data",
         "label": "Datos",
-        "bytes": 5828,
-        "percentage": 0.79
+        "bytes": 6457,
+        "percentage": 0.85
       },
       {
         "id": "brands",
         "label": "Brands",
         "bytes": 5288,
-        "percentage": 0.71
+        "percentage": 0.7
       }
     ]
   },
@@ -128,7 +128,7 @@
       "path": "artefactos/ciclo-09/gestion-innovacion/encuesta-uso-inteligencia-artificial",
       "bytes": 264068,
       "fileCount": 6,
-      "percentageOfArtifacts": 86.08
+      "percentageOfArtifacts": 81.63
     },
     {
       "id": "ciclo-09-introduccion-auditoria-sistemas",
@@ -141,7 +141,7 @@
       "path": "artefactos/ciclo-09/seguridad-auditoria/introduccion-auditoria-sistemas",
       "bytes": 22158,
       "fileCount": 4,
-      "percentageOfArtifacts": 7.22
+      "percentageOfArtifacts": 6.85
     },
     {
       "id": "personal-anatomia-biblioteca-web",
@@ -154,7 +154,20 @@
       "path": "artefactos/personal/general/anatomia-biblioteca-web",
       "bytes": 20532,
       "fileCount": 3,
-      "percentageOfArtifacts": 6.69
+      "percentageOfArtifacts": 6.35
+    },
+    {
+      "id": "ciclo-09-inteligencia-negocios-formulacion-proyecto-bi",
+      "title": "Formulación de un proyecto de BI",
+      "areaId": "ciclo-09",
+      "areaLabel": "9.º ciclo",
+      "type": "presentation",
+      "typeLabel": "Presentación",
+      "status": "published",
+      "path": "artefactos/ciclo-09/inteligencia-negocios/formulacion-proyecto-bi",
+      "bytes": 16736,
+      "fileCount": 3,
+      "percentageOfArtifacts": 5.17
     }
   ],
   "largestFiles": [

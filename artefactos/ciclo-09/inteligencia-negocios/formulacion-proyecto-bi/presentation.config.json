@@ -1,0 +1,25 @@
+{
+  "contractVersion": 1,
+  "presentationId": "ciclo-09-inteligencia-negocios-formulacion-proyecto-bi",
+  "brand": "usmp",
+  "brandData": {
+    "faculty": "Facultad de Ingeniería y Arquitectura",
+    "school": "Escuela Profesional de Ingeniería en Computación y Sistemas",
+    "course": "Inteligencia de Negocios",
+    "author": "Jean Carlos Estrada Barrientos · Jorge Luis Quispe Mendivil"
+  },
+  "aspectRatio": "16:9",
+  "chromeDefault": "minimal",
+  "transition": {
+    "default": "fade",
+    "durationMs": 550
+  },
+  "features": {
+    "controls": true,
+    "progress": true,
+    "slideNumber": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true
+  }
+}
